@@ -22,8 +22,8 @@ public class Student {
         this.brothers = brothers;
     }
 
-    public String getName() {
-        return name.firstName;
+    public FullName getName() {
+        return name;
     }
 
     public void setMother(Parent mother) {

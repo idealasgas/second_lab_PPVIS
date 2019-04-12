@@ -13,9 +13,7 @@ public class SAXExample {
     private static ArrayList<Student> students = new ArrayList<>();
     private static Student student;
 
-
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-        // Создание фабрики и образца парсера
+    public ArrayList getStudents() throws ParserConfigurationException, SAXException, IOException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
 
@@ -24,6 +22,8 @@ public class SAXExample {
 
         for (Student student : students)
             System.out.println(String.format("Имя студента: %s,  его мамочки: %s,  его папочки: %s, кол-во сестер: %d", student.getName(), student.getMother().getName(), student.getFather().getName(), student.getSisters()));
+
+        return students;
     }
 
     private static class XMLHandler extends DefaultHandler {

@@ -21,5 +21,9 @@ public class FullName {
         this.surname = surname;
     }
 
+    public String getFullName() {
+        return this.surname + " " + this.firstName + " " + this.secondName;
+    }
+
 
 }

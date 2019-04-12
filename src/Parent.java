@@ -7,7 +7,11 @@ public class Parent {
         this.name = name;
     }
 
-    public String getName() {
-        return name.firstName;
+    public FullName getName() {
+        return name;
+    }
+
+    public int getIncome() {
+        return income;
     }
 }
