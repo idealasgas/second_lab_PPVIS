@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<company>
+    <name>Lab</name>
+    <offices>
+        <office floor="1" room="1">
+            <students>
+                <student firstname="Mashenka" secondname="Georgievna" surname="Akhramenko" sisters="0" brothers="0">
+                    <mother firstname="Ira" secondname="Vadimovna" surname="Akhramenko" income="1000"/>
+                    <father firstname="Georgiy" secondname="Arsentievich" surname="Akhramenko" income="1000"/>
+                </student>
+                <student firstname="Ira" secondname="Alexandrovna" surname="Lukashevich" sisters="0" brothers="1">
+                    <mother firstname="Anna" secondname="Vladimirovna" surname="Lukashevich" income="1000"/>
+                    <father firstname="Alexandr" secondname="Dmitrievich" surname="Lukashevich" income="1000"/>
+                </student>
+            </students>
+        </office>
+    </offices>
+</company>
