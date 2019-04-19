@@ -20,8 +20,8 @@ public class SAXExample {
         XMLHandler handler = new XMLHandler();
         parser.parse(new File("resource/xml_file1.xml"), handler);
 
-        for (Student student : students)
-            System.out.println(String.format("Имя студента: %s,  его мамочки: %s,  его папочки: %s, кол-во сестер: %d", student.getName(), student.getMother().getName(), student.getFather().getName(), student.getSisters()));
+//        for (Student student : students)
+//            System.out.println(String.format("Имя студента: %s,  его мамочки: %s,  его папочки: %s, кол-во сестер: %d", student.getName(), student.getMother().getName(), student.getFather().getName(), student.getSisters()));
 
         return students;
     }
@@ -44,34 +44,29 @@ public class SAXExample {
             // Тут будет логика реакции на начало элемента
             if (student == null) {
                 if (qName.equals("student")) {
-                    String firstname = attributes.getValue("firstname");
-                    String secondname = attributes.getValue("secondname");
+                    String firstName = attributes.getValue("firstname");
+                    String secondName = attributes.getValue("secondname");
                     String surname = attributes.getValue("surname");
                     int sisters =  Integer.parseInt(attributes.getValue("sisters"));
                     int brothers = Integer.parseInt(attributes.getValue("brothers"));
-                    FullName name = new FullName(surname, firstname, secondname);
-                    student = new Student(name, sisters, brothers);
+                    student = new Student(firstName, secondName, surname, sisters, brothers);
                 }
             }
-            if (qName.equals("mother")) {
-                String firstname = attributes.getValue("firstname");
-                String secondname = attributes.getValue("secondname");
+            if (qName.equals("parent")) {
+                String firstName = attributes.getValue("firstname");
+                String secondName = attributes.getValue("secondname");
                 String surname = attributes.getValue("surname");
                 int income = Integer.parseInt(attributes.getValue("income"));
-                FullName name = new FullName(surname, firstname, secondname);
-                Parent mother = new Parent(income, name);
-                student.setMother(mother);
-            }
-            if (qName.equals("father")) {
-                String firstname = attributes.getValue("firstname");
-                String secondname = attributes.getValue("secondname");
-                String surname = attributes.getValue("surname");
-                int income = Integer.parseInt(attributes.getValue("income"));
-                FullName name = new FullName(surname, firstname, secondname);
-                Parent father = new Parent(income, name);
-                student.setFather(father);
-                students.add(student);
-                student = null;
+                if (attributes.getValue("type").equals("mother")) {
+                    Parent mother = new Parent(income, firstName, secondName, surname);
+                    student.setMother(mother);
+                }
+                if (attributes.getValue("type").equals("father")) {
+                    Parent father = new Parent(income, firstName, secondName, surname);
+                    student.setFather(father);
+                    students.add(student);
+                    student = null;
+                }
             }
 
         }

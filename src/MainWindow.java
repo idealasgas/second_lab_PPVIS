@@ -37,7 +37,7 @@ public class MainWindow extends Application {
         Button remove = new Button("Remove");
         Button search = new Button("Search");
 
-        TableView<Student> table = new TableView< >();
+        TableView<Student> table = new TableView<>();
         ObservableList<Student> students = FXCollections.observableArrayList(new SAXExample().getStudents());
         table.setItems(students);
         TableColumn<Student, String> studentsNameColumn = new TableColumn<>("Student's name");
@@ -46,10 +46,10 @@ public class MainWindow extends Application {
         TableColumn<Student, String> mothersNameColumn = new TableColumn<>("Mother's name");
         TableColumn<Student, String> mothersIncomeColumn = new TableColumn<>("Mother's income");
 
-        studentsNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getName().getFullName()));
-        fathersNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getFather().getName().getFullName()));
+        studentsNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getFullName()));
+        fathersNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getFather().getFullName()));
         fathersIncomeColumn.setCellValueFactory(param -> new SimpleStringProperty(Integer.toString(param.getValue().getFather().getIncome())));
-        mothersNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getMother().getName().getFullName()));
+        mothersNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getMother().getFullName()));
         mothersIncomeColumn.setCellValueFactory(param -> new SimpleStringProperty(Integer.toString(param.getValue().getMother().getIncome())));
 
         table.getColumns().setAll(studentsNameColumn, fathersNameColumn, fathersIncomeColumn, mothersNameColumn, mothersIncomeColumn);

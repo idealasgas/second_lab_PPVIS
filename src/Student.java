@@ -1,29 +1,22 @@
 public class Student {
     private int sisters, brothers;
-    private FullName name;
     private Parent mother, father;
 
+    private String firstName;
+    private String secondName;
+    private String surname;
 
-    public Student(FullName name, Parent father, Parent mother, int sisters, int brothers) {
-        this.name = name;
-        this.sisters = sisters;
+
+    public Student(String firstName, String secondName, String surname, int sisters, int brothers) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.surname = surname;
         this.brothers = brothers;
-        this.father = father;
-        this.mother = mother;
-    }
-
-    public Student(FullName name) {
-        this.name = name;
-    }
-
-    public Student(FullName name, int sisters, int brothers) {
-        this.name = name;
         this.sisters = sisters;
-        this.brothers = brothers;
     }
 
-    public FullName getName() {
-        return name;
+    public String getFullName() {
+        return this.surname + " " + this.firstName + " " + this.secondName;
     }
 
     public void setMother(Parent mother) {

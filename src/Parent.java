@@ -1,14 +1,19 @@
 public class Parent {
     private int income;
-    private FullName name;
 
-    public Parent(int income, FullName name) {
+    private String firstName;
+    private String secondName;
+    private String surname;
+
+    public Parent(int income, String firstName, String secondName, String surname) {
         this.income = income;
-        this.name = name;
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.surname = surname;
     }
 
-    public FullName getName() {
-        return name;
+    public String getFullName() {
+        return this.surname + " " + this.firstName + " " + this.secondName;
     }
 
     public int getIncome() {
