@@ -44,8 +44,8 @@ public class SAXExample {
             // Тут будет логика реакции на начало элемента
             if (student == null) {
                 if (qName.equals("student")) {
-                    String firstName = attributes.getValue("firstname");
-                    String secondName = attributes.getValue("secondname");
+                    String firstName = attributes.getValue("firstName");
+                    String secondName = attributes.getValue("secondName");
                     String surname = attributes.getValue("surname");
                     int sisters =  Integer.parseInt(attributes.getValue("sisters"));
                     int brothers = Integer.parseInt(attributes.getValue("brothers"));
@@ -53,8 +53,8 @@ public class SAXExample {
                 }
             }
             if (qName.equals("parent")) {
-                String firstName = attributes.getValue("firstname");
-                String secondName = attributes.getValue("secondname");
+                String firstName = attributes.getValue("firstName");
+                String secondName = attributes.getValue("secondName");
                 String surname = attributes.getValue("surname");
                 int income = Integer.parseInt(attributes.getValue("income"));
                 if (attributes.getValue("type").equals("mother")) {
