@@ -53,26 +53,22 @@ public class MainWindow extends Application {
         TableColumn<Student, String> fathersIncomeColumn = new TableColumn<>("Father's income");
         TableColumn<Student, String> mothersNameColumn = new TableColumn<>("Mother's name");
         TableColumn<Student, String> mothersIncomeColumn = new TableColumn<>("Mother's income");
+        TableColumn<Student, String> brothersColumn = new TableColumn<>("Brothers");
+        TableColumn<Student, String> sistersColumn = new TableColumn<>("Sisters");
+
 
         studentsNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getFullName()));
         fathersNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getFather().getFullName()));
         fathersIncomeColumn.setCellValueFactory(param -> new SimpleStringProperty(Integer.toString(param.getValue().getFather().getIncome())));
         mothersNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getMother().getFullName()));
         mothersIncomeColumn.setCellValueFactory(param -> new SimpleStringProperty(Integer.toString(param.getValue().getMother().getIncome())));
+        brothersColumn.setCellValueFactory(param -> new SimpleStringProperty(Integer.toString(param.getValue().getBrothers())));
+        sistersColumn.setCellValueFactory(param -> new SimpleStringProperty(Integer.toString(param.getValue().getSisters())));
 
-        table.getColumns().setAll(studentsNameColumn, fathersNameColumn, fathersIncomeColumn, mothersNameColumn, mothersIncomeColumn);
-
-        Button addTest = new Button("test");
-
-//        addTest.setOnAction(event -> {
-//            DOMExample dom = new DOMExample();
-//            dom.addRecord("Name", "Second", "surname");
-//            Student newstudent = new Student("name", "hgf", "hgf", 3, 4);
-//            students.add(newstudent);
-//        });
+        table.getColumns().setAll(studentsNameColumn, fathersNameColumn, fathersIncomeColumn, mothersNameColumn, mothersIncomeColumn, brothersColumn, sistersColumn);
 
         toolBar.getItems().addAll(add, remove, search);
-        VBox vBox = new VBox(toolBar, table, addTest);
+        VBox vBox = new VBox(toolBar, table);
 
         return vBox;
     }
@@ -173,6 +169,14 @@ public class MainWindow extends Application {
                 newStudent.setFather(father);
 
                 students.add(newStudent);
+
+                 DOMExample dom = new DOMExample();
+                 dom.addRecord(studentFirstName.getText(), studentSecondName.getText(), studentSurname.getText(),
+                         mothersFirstName.getText(), mothersSecondName.getText(), mothersSurname.getText(),
+                         fathersFirstName.getText(), fathersSecondName.getText(), fathersSurname.getText(),
+                         Integer.parseInt(fathersIncome.getText()), Integer.parseInt(mothersIncome.getText()),
+                         Integer.parseInt(brothers.getText()), Integer.parseInt(sisters.getText())
+                         );
 
             }
             return null;

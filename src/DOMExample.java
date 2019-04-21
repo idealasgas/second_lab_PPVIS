@@ -81,7 +81,7 @@ public class DOMExample {
         }
     }
 
-    public void createParent(String firstName, String secondName, String  surname, String type, int income) {
+    private void createParent(String firstName, String secondName, String  surname, String type, int income) {
         Element parent = document.createElement("parent");
 
         Attr parentFirstName = document.createAttribute("firstName");

@@ -38,4 +38,8 @@ public class Student {
     public int getSisters() {
          return sisters;
     }
+
+    public int getBrothers() {
+        return brothers;
+    }
 }
