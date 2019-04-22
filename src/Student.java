@@ -42,4 +42,16 @@ public class Student {
     public int getBrothers() {
         return brothers;
     }
+
+    public String getFirstName(){
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
 }
