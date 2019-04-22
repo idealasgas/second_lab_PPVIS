@@ -6,6 +6,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.util.ArrayList;
+
 public class SearchView {
     private Button searchByStudentNameButton;
     private Button searchByParentNameButton;
@@ -23,7 +25,6 @@ public class SearchView {
         searchDialog = new Dialog();
 
         searchDialog.setTitle("Search for a student");
-//        ButtonType searchButtonType = new ButtonType("Search", ButtonBar.ButtonData.OK_DONE);
         searchDialog.getDialogPane().getButtonTypes().addAll(ButtonType.CANCEL);
 
         box = new VBox();
@@ -40,8 +41,8 @@ public class SearchView {
         box.getChildren().add(buttons);
 
         // добавить флаг, который будет передаваться в контроллер чтобы понимать по чему искать
-        searchByStudentNameButton.setOnAction(event -> searchByName());
-        searchByParentNameButton.setOnAction(event -> searchByName());
+        searchByStudentNameButton.setOnAction(event -> searchByName("student"));
+        searchByParentNameButton.setOnAction(event -> searchByName("parent"));
         searchByNumberOfSiblingsButton.setOnAction(event -> searchByNumberOfSiblings());
         searchByParentIncomeButton.setOnAction(event -> searchByParentIncome());
 
@@ -56,29 +57,33 @@ public class SearchView {
         searchByStudentNameButton.setDisable(true);
     }
 
-    private void searchByName() {
-        Label studentFirstNameLabel = new Label("first name:");
-        Label studentSecondNameLabel = new Label("second name:");
-        Label studentSurnameLabel = new Label("surname:");
+    private void searchByName(String type) {
+        Label firstNameLabel = new Label("first name:");
+        Label secondNameLabel = new Label("second name:");
+        Label surnameLabel = new Label("surname:");
 
-        TextField studentFirstName = new TextField();
-        TextField studentSecondName = new TextField();
-        TextField studentSurname = new TextField();
+        TextField firstName = new TextField();
+        TextField secondName = new TextField();
+        TextField surname = new TextField();
 
         Button searchButton = new Button("search");
         searchButton.setOnAction(event -> {
-            TableView searchTable = new ViewTable().getTable(search.searchByStudentName(studentFirstName.getText(), studentSecondName.getText(), studentSurname.getText()));
-            HBox tableBox = new HBox();
-            tableBox.getChildren().add(searchTable);
-            box.getChildren().add(tableBox);
+            if (type.equals("student")) {
+                TableView searchTable = new ViewTable().getTable(search.searchByStudentName(firstName.getText(), secondName.getText(), surname.getText()));
+                box.getChildren().add(searchTable);
+            }
+            if (type.equals("parent")) {
+                TableView searchTable = new ViewTable().getTable(search.searchByParentName(firstName.getText(), secondName.getText(), surname.getText()));
+                box.getChildren().add(searchTable);
+            }
         });
 
         VBox labels = new VBox();
         VBox inputs = new VBox();
         HBox container = new HBox();
 
-        labels.getChildren().addAll(studentSurnameLabel, studentFirstNameLabel, studentSecondNameLabel);
-        inputs.getChildren().addAll(studentSurname, studentFirstName, studentSecondName);
+        labels.getChildren().addAll(surnameLabel, firstNameLabel, secondNameLabel);
+        inputs.getChildren().addAll(surname, firstName, secondName);
         container.getChildren().addAll(labels, inputs, searchButton);
 
         searchDialog.setHeight(400);
@@ -89,21 +94,30 @@ public class SearchView {
 
     private void searchByNumberOfSiblings() {
         ToggleGroup radioButtons = new ToggleGroup();
-
+        Button searchButton = new Button("search");
         RadioButton sisters = new RadioButton("sisters");
         RadioButton brothers = new RadioButton("brothers");
 
         radioButtons.getToggles().addAll(sisters, brothers);
 
         TextField number = new TextField();
-
         HBox container = new HBox();
         container.setSpacing(10);
-        container.getChildren().addAll(sisters, brothers, number);
+        container.getChildren().addAll(sisters, brothers, number, searchButton);
 
         box.getChildren().add(container);
         disableButtons();
-        searchDialog.setHeight(200);
+
+        searchButton.setOnAction(event -> {
+            if (radioButtons.getSelectedToggle() == null) {
+                // алерт
+            } else {
+                RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
+                TableView<Student> searchTable = new ViewTable().getTable(search.searchByNumberOfSiblings(selected.getText(), number.getText()));
+                box.getChildren().add(searchTable);
+                searchDialog.setHeight(300);
+            }
+        });
     }
 
     private void searchByParentIncome() {
