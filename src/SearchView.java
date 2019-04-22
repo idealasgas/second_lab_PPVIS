@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import javax.xml.soap.Text;
 import java.util.ArrayList;
 
 public class SearchView {
@@ -126,16 +127,28 @@ public class SearchView {
         RadioButton mother = new RadioButton("mother");
         RadioButton father = new RadioButton("father");
 
+        Button searchButton = new Button("search");
+
         radioButtons.getToggles().addAll(mother, father);
 
-        TextField number = new TextField();
+        TextField firstBound = new TextField();
+        TextField secondBound = new TextField();
 
         HBox container = new HBox();
-        container.setSpacing(10);
-        container.getChildren().addAll(mother, father, number);
+        container.getChildren().addAll(mother, father, firstBound, secondBound, searchButton);
 
         box.getChildren().add(container);
         disableButtons();
-        searchDialog.setHeight(200);
+
+        searchButton.setOnAction(event -> {
+            if (radioButtons.getSelectedToggle() == null) {
+                // алерт
+            } else {
+                RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
+                TableView<Student> searchTable = new ViewTable().getTable(search.searchByParentIncome(selected.getText(), firstBound.getText(), secondBound.getText()));
+                box.getChildren().add(searchTable);
+                searchDialog.setHeight(300);
+            }
+        });
     }
 }

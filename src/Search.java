@@ -43,4 +43,46 @@ public class Search {
         }
         return null;
     }
+
+    public ArrayList<Student> searchByParentIncome(String type, String lowerBound, String upperBound) {
+        switch (type) {
+            case "mother": {
+                if (!lowerBound.equals("") && upperBound.equals("")) {
+                    List list = students.stream().filter(student -> (student.getMother().getIncome() >= Integer.parseInt(lowerBound)))
+                                                 .collect(Collectors.toList());
+                    return new ArrayList<Student>(list);
+                }
+                if (!upperBound.equals("") && lowerBound.equals("")) {
+                    List list = students.stream().filter(student -> (student.getMother().getIncome() <= Integer.parseInt(upperBound)))
+                                                 .collect(Collectors.toList());
+                    return new ArrayList<Student>(list);
+                }
+
+                if (!upperBound.equals("") && !lowerBound.equals("")) {
+                    List list = students.stream().filter(student -> ((student.getMother().getIncome() < Integer.parseInt(upperBound)) && student.getMother().getIncome() > Integer.parseInt(lowerBound)))
+                                                 .collect(Collectors.toList());
+                    return new ArrayList<Student>(list);
+                }
+            }
+            case "father": {
+                if (!lowerBound.equals("") && upperBound.equals("")) {
+                    List list = students.stream().filter(student -> (student.getFather().getIncome() >= Integer.parseInt(lowerBound)))
+                            .collect(Collectors.toList());
+                    return new ArrayList<Student>(list);
+                }
+                if (!upperBound.equals("") && lowerBound.equals("")) {
+                    List list = students.stream().filter(student -> (student.getFather().getIncome() <= Integer.parseInt(upperBound)))
+                            .collect(Collectors.toList());
+                    return new ArrayList<Student>(list);
+                }
+
+                if (!upperBound.equals("") && !lowerBound.equals("")) {
+                    List list = students.stream().filter(student -> ((student.getFather().getIncome() < Integer.parseInt(upperBound)) && student.getMother().getIncome() > Integer.parseInt(lowerBound)))
+                            .collect(Collectors.toList());
+                    return new ArrayList<Student>(list);
+                }
+            }
+        }
+        return null;
+    }
 }
