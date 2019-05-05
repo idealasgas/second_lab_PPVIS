@@ -59,4 +59,36 @@ public class StudentsController {
         ArrayList<Student> filtered = new ArrayList<>(list);
         return filtered;
     }
+
+    public ArrayList<Student> deleteByParentsIncome(String parent, String lowerBound, String higherBound) {
+        List list;
+//        сделать булеаном
+        if (parent == "mother's income") {
+            list = model.students.stream().filter(student -> {
+                if (lowerBound.isEmpty()) {
+                    return (student.getMother().getIncome() < Integer.parseInt(higherBound));
+                } else if (higherBound.isEmpty()) {
+                    return (student.getMother().getIncome() > Integer.parseInt(lowerBound));
+                } else {
+                    return ((student.getMother().getIncome() > Integer.parseInt(lowerBound))
+                            && (student.getMother().getIncome() < Integer.parseInt(higherBound)));
+                }
+            }).collect(Collectors.toList());
+        } else {
+            list = model.students.stream().filter(student -> {
+                if (lowerBound.isEmpty()) {
+                    return (student.getFather().getIncome() < Integer.parseInt(higherBound));
+                } else if (higherBound.isEmpty()) {
+                    return (student.getFather().getIncome() > Integer.parseInt(lowerBound));
+                } else {
+                    return ((student.getFather().getIncome() > Integer.parseInt(lowerBound))
+                            && (student.getFather().getIncome() < Integer.parseInt(higherBound)));
+                }
+            }).collect(Collectors.toList());
+        }
+        model.students.removeAll(list);
+        model.studentArrayList.removeAll(list);
+        ArrayList<Student> filtered = new ArrayList<>(list);
+        return filtered;
+    }
 }

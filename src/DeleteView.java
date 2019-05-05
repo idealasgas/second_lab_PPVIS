@@ -36,6 +36,7 @@ public class DeleteView {
         deleteByStudentNameButton.setOnAction(event -> deleteByStudentName());
         deleteByParentNameButton.setOnAction(event -> deleteByParentName());
         deleteByNumberOfSiblingsButton.setOnAction(event -> deleteByNumberOfSiblings());
+        deleteByParentIncomeButton.setOnAction(event -> deleteByParentsIncome());
 
         HBox buttons = new HBox();
 
@@ -147,6 +148,44 @@ public class DeleteView {
                 setStudents(controller.deleteByNumberOfSiblings(selected.getText(), number.getText()));
                 showAlert();
             }});
+    }
+
+    private void deleteByParentsIncome() {
+        ToggleGroup radioButtons = new ToggleGroup();
+        RadioButton mother = new RadioButton("mother's income");
+        RadioButton father = new RadioButton("father's income");
+
+        radioButtons.getToggles().addAll(mother, father);
+        Label lowerBoundLabel = new Label("lower bound:");
+        Label higherBoundLabel = new Label("higher bound:");
+
+        TextField lowerBound = new TextField();
+        TextField higherBound = new TextField();
+
+        Button deleteButton = new Button("delete");
+
+        GridPane grid = new GridPane();
+        grid.add(mother, 0, 0);
+        grid.add(father, 1, 0);
+        grid.add(lowerBoundLabel, 0, 1);
+        grid.add(lowerBound, 1, 1);
+        grid.add(higherBoundLabel, 0, 2);
+        grid.add(higherBound, 1, 2);
+        grid.add(deleteButton, 2, 2);
+
+        box.getChildren().add(grid);
+        disableButtons();
+        deleteDialog.setHeight(300);
+
+        deleteButton.setOnAction(event -> {
+            if (radioButtons.getSelectedToggle() == null) {
+                // алерт
+            } else {
+                RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
+                setStudents(controller.deleteByParentsIncome(selected.getText(), lowerBound.getText(), higherBound.getText()));
+                showAlert();
+            }
+        });
     }
 
     private void disableButtons() {
