@@ -19,4 +19,16 @@ public class Parent {
     public int getIncome() {
         return income;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
 }

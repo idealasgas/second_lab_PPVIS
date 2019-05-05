@@ -1,9 +1,8 @@
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-
-import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 
 public class DeleteView {
@@ -35,6 +34,7 @@ public class DeleteView {
         deleteByParentIncomeButton = new Button("delete by income");
 
         deleteByStudentNameButton.setOnAction(event -> deleteByStudentName());
+        deleteByParentNameButton.setOnAction(event -> deleteByParentName());
 
         HBox buttons = new HBox();
 
@@ -57,7 +57,7 @@ public class DeleteView {
         Button deleteButton = new Button("delete");
         deleteButton.setOnAction(event -> {
             setStudents(controller.deleteByName(nameField.getText(), secondNameField.getText(), surnameField.getText()));
-//            getAlert();
+            showAlert();
         });
 
         HBox labelText1 = new HBox();
@@ -75,6 +75,50 @@ public class DeleteView {
         box.getChildren().add(container);
     }
 
+    private void deleteByParentName() {
+        ToggleGroup radioButtons = new ToggleGroup();
+        Button deleteButton = new Button("delete");
+        RadioButton mother = new RadioButton("mother");
+        RadioButton father = new RadioButton("father");
+
+        radioButtons.getToggles().addAll(mother, father);
+
+        Label nameLabel = new Label("name: ");
+        Label secondNameLabel = new Label("second name: ");
+        Label surnameLabel = new Label("surname: ");
+        TextField name = new TextField();
+        TextField secondName = new TextField();
+        TextField surname = new TextField();
+
+        GridPane grid = new GridPane();
+        grid.add(nameLabel, 0, 0);
+        grid.add(secondNameLabel,  0, 1);
+        grid.add(surnameLabel,  0, 2);
+        grid.add(name,  1, 0);
+        grid.add(secondName,  1, 1);
+        grid.add(surname,  1, 2);
+        grid.add(mother, 0, 3);
+        grid.add(father, 1, 3);
+        grid.add(deleteButton, 2, 3);
+
+        box.getChildren().add(grid);
+        disableButtons();
+        deleteDialog.setHeight(300);
+
+        deleteButton.setOnAction(event -> {
+            if (radioButtons.getSelectedToggle() == null) {
+                // алерт
+            } else {
+                RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
+//                TableView<Student> searchTable = new ViewTable().getTable(search.searchByNumberOfSiblings(selected.getText(), number.getText()));
+//                box.getChildren().add(searchTable);
+//                searchDialog.setHeight(300);
+                setStudents(controller.deleteByParentsName(selected.getText(), name.getText(), secondName.getText(), surname.getText()));
+                showAlert();
+            }
+        });
+    }
+
     private void disableButtons() {
         deleteByStudentNameButton.setDisable(true);
         deleteByParentNameButton.setDisable(true);
@@ -86,8 +130,18 @@ public class DeleteView {
         this.students = students;
     }
 
-    public ArrayList<Student> getStudents(){
-        return students;
+    public void showAlert() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Deletion!");
+        alert.setHeaderText("Hey");
+        if (students.isEmpty()) {
+            alert.setContentText("Nothing found");
+        } else {
+            alert.setContentText(students.size() + " students have been deleted just now.");
+        }
+
+        alert.showAndWait();
+        deleteDialog.close();
     }
 
 }
