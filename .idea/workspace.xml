@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a300e53-d8a1-4ff8-8a29-c53e58afa54f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StudentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudentsController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SearchView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="170" column="189" selection-start-line="170" selection-start-column="189" selection-end-line="170" selection-end-column="189" />
+            <state relative-caret-position="314">
+              <caret line="172" column="51" selection-start-line="172" selection-start-column="51" selection-end-line="172" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#603#604#0" expanded="true" />
@@ -76,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/StudentsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="120" column="65" selection-start-line="120" selection-start-column="65" selection-end-line="120" selection-end-column="65" />
+            <state relative-caret-position="229">
+              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#283#284#0" expanded="true" />
@@ -88,10 +87,10 @@
                 <element signature="method#deleteByName#0;class#StudentsController#0" />
                 <element signature="method#deleteByParentsName#0;class#StudentsController#0" />
                 <element signature="method#deleteByNumberOfSiblings#0;class#StudentsController#0" />
-                <element signature="method#deleteByParentsIncome#0;class#StudentsController#0" />
                 <element signature="method#searchByStudentName#0;class#StudentsController#0" />
                 <element signature="method#searchByParentsName#0;class#StudentsController#0" />
                 <element signature="method#searchByNumberOfSiblings#0;class#StudentsController#0" />
+                <element signature="method#searchByParentsIncome#0;class#StudentsController#0" />
                 <element signature="method#equal#0;class#StudentsController#0" />
               </folding>
             </state>
@@ -208,8 +207,8 @@
         <option value="$PROJECT_DIR$/src/DeleteView.java" />
         <option value="$PROJECT_DIR$/resource/xml_file1.xml" />
         <option value="$PROJECT_DIR$/src/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/StudentsController.java" />
         <option value="$PROJECT_DIR$/src/SearchView.java" />
+        <option value="$PROJECT_DIR$/src/StudentsController.java" />
       </list>
     </option>
   </component>
@@ -250,7 +249,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557066972018" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557067397735" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../javafx" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -309,7 +308,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49747000" />
+    <option name="totallyTimeSpent" value="50263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -324,7 +323,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24504249" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24504249" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -535,30 +534,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/StudentsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="120" column="65" selection-start-line="120" selection-start-column="65" selection-end-line="120" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="method#deleteByName#0;class#StudentsController#0" />
-            <element signature="method#deleteByParentsName#0;class#StudentsController#0" />
-            <element signature="method#deleteByNumberOfSiblings#0;class#StudentsController#0" />
-            <element signature="method#deleteByParentsIncome#0;class#StudentsController#0" />
-            <element signature="method#searchByStudentName#0;class#StudentsController#0" />
-            <element signature="method#searchByParentsName#0;class#StudentsController#0" />
-            <element signature="method#searchByNumberOfSiblings#0;class#StudentsController#0" />
-            <element signature="method#equal#0;class#StudentsController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="170" column="189" selection-start-line="170" selection-start-column="189" selection-end-line="170" selection-end-column="189" />
+        <state relative-caret-position="314">
+          <caret line="172" column="51" selection-start-line="172" selection-start-column="51" selection-end-line="172" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#603#604#0" expanded="true" />
@@ -566,6 +545,26 @@
             <element signature="method#disableButtons#0;class#SearchView#0" />
             <element signature="method#searchByName#0;class#SearchView#0" />
             <element signature="method#searchByNumberOfSiblings#0;class#SearchView#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StudentsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#283#284#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="method#deleteByName#0;class#StudentsController#0" />
+            <element signature="method#deleteByParentsName#0;class#StudentsController#0" />
+            <element signature="method#deleteByNumberOfSiblings#0;class#StudentsController#0" />
+            <element signature="method#searchByStudentName#0;class#StudentsController#0" />
+            <element signature="method#searchByParentsName#0;class#StudentsController#0" />
+            <element signature="method#searchByNumberOfSiblings#0;class#StudentsController#0" />
+            <element signature="method#searchByParentsIncome#0;class#StudentsController#0" />
+            <element signature="method#equal#0;class#StudentsController#0" />
           </folding>
         </state>
       </provider>
