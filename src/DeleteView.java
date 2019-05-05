@@ -35,6 +35,7 @@ public class DeleteView {
 
         deleteByStudentNameButton.setOnAction(event -> deleteByStudentName());
         deleteByParentNameButton.setOnAction(event -> deleteByParentName());
+        deleteByNumberOfSiblingsButton.setOnAction(event -> deleteByNumberOfSiblings());
 
         HBox buttons = new HBox();
 
@@ -110,13 +111,42 @@ public class DeleteView {
                 // алерт
             } else {
                 RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
-//                TableView<Student> searchTable = new ViewTable().getTable(search.searchByNumberOfSiblings(selected.getText(), number.getText()));
-//                box.getChildren().add(searchTable);
-//                searchDialog.setHeight(300);
                 setStudents(controller.deleteByParentsName(selected.getText(), name.getText(), secondName.getText(), surname.getText()));
                 showAlert();
             }
         });
+    }
+
+    private void deleteByNumberOfSiblings() {
+        Label numberLabel = new Label("Number of siblings:");
+        TextField number = new TextField();
+
+        ToggleGroup radioButtons = new ToggleGroup();
+        Button deleteButton = new Button("delete");
+        RadioButton sisters = new RadioButton("sisters");
+        RadioButton brothers = new RadioButton("brothers");
+
+        radioButtons.getToggles().addAll(sisters, brothers);
+
+        GridPane grid = new GridPane();
+        grid.add(sisters, 0, 0);
+        grid.add(brothers, 1, 0);
+        grid.add(numberLabel, 0, 1);
+        grid.add(number, 1, 1);
+        grid.add(deleteButton, 2, 2);
+
+        disableButtons();
+        box.getChildren().add(grid);
+        deleteDialog.setHeight(200);
+
+        deleteButton.setOnAction(event -> {
+            if (radioButtons.getSelectedToggle() == null) {
+                // алерт
+            } else {
+                RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
+                setStudents(controller.deleteByNumberOfSiblings(selected.getText(), number.getText()));
+                showAlert();
+            }});
     }
 
     private void disableButtons() {
