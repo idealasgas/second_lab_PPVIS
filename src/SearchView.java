@@ -3,6 +3,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -13,11 +14,11 @@ public class SearchView {
     private Button searchByParentIncomeButton;
     private VBox box;
     private Dialog searchDialog;
-//    private Search search;
+    private StudentsController controller;
 
-//    SearchView(Search searchController) {
-//        this.search = searchController;
-//    }
+    SearchView(StudentsController controller) {
+        this.controller = controller;
+    }
 
     public Dialog getDialog() {
         searchDialog = new Dialog();
@@ -65,29 +66,49 @@ public class SearchView {
         TextField surname = new TextField();
 
         Button searchButton = new Button("search");
-        searchButton.setOnAction(event -> {
-            if (type.equals("student")) {
-//                TableView searchTable = new ViewTable().getTable(search.searchByStudentName(firstName.getText(), secondName.getText(), surname.getText()));
-//                box.getChildren().add(searchTable);
-            }
-            if (type.equals("parent")) {
-//                TableView searchTable = new ViewTable().getTable(search.searchByParentName(firstName.getText(), secondName.getText(), surname.getText()));
-//                box.getChildren().add(searchTable);
-            }
-        });
 
-        VBox labels = new VBox();
-        VBox inputs = new VBox();
-        HBox container = new HBox();
+        GridPane grid = new GridPane();
+        grid.add(firstNameLabel, 0, 0);
+        grid.add(firstName, 1, 0);
+        grid.add(secondNameLabel, 0, 1);
+        grid.add(secondName, 1, 1);
+        grid.add(surnameLabel, 0, 2);
+        grid.add(surname, 1, 2);
+        grid.add(searchButton, 1, 3);
+        ToggleGroup radioButtons = new ToggleGroup();
 
-        labels.getChildren().addAll(surnameLabel, firstNameLabel, secondNameLabel);
-        inputs.getChildren().addAll(surname, firstName, secondName);
-        container.getChildren().addAll(labels, inputs, searchButton);
+
+        if (type.equals("parent")) {
+            RadioButton mother = new RadioButton("mother");
+            RadioButton father = new RadioButton("father");
+
+            radioButtons.getToggles().addAll(mother, father);
+            grid.add(mother, 0, 4);
+            grid.add(father, 1, 4);
+        }
 
         searchDialog.setHeight(400);
-        box.getChildren().add(container);
+        box.getChildren().add(grid);
 
         disableButtons();
+
+        searchButton.setOnAction(event -> {
+            if (type.equals("student")) {
+                ObservableList<Student> studentsForTable = FXCollections.observableArrayList(controller.searchByStudentName(firstName.getText(), secondName.getText(), surname.getText()));
+                TableView searchTable = new Table().getTable(studentsForTable);
+                box.getChildren().add(searchTable);
+            }
+            if (type.equals("parent")) {
+                if (radioButtons.getSelectedToggle() == null) {
+                    // алерт
+                } else {
+                    RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
+                    ObservableList<Student> studentsForTable = FXCollections.observableArrayList(controller.searchByParentsName(selected.getText(), firstName.getText(), secondName.getText(), surname.getText()));
+                    TableView searchTable = new Table().getTable(studentsForTable);
+                    box.getChildren().add(searchTable);
+                }
+            }
+        });
     }
 
     private void searchByNumberOfSiblings() {

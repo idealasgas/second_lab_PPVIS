@@ -1,7 +1,4 @@
 import javafx.application.Application;
-import javafx.beans.property.SimpleFloatProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -14,15 +11,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Callback;
-import javafx.util.Pair;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.soap.Text;
-import java.awt.*;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainWindow extends Application {
@@ -58,7 +50,7 @@ public class MainWindow extends Application {
 
 
         add.setOnAction(event -> onAddButton());
-        search.setOnAction(event -> onSearchButton());
+        search.setOnAction(event -> onSearchButton(studentsController, model));
         remove.setOnAction(event -> onDeleteButton(studentsController, model));
 
         toolBar.getItems().addAll(add, remove, search);
@@ -183,8 +175,8 @@ public class MainWindow extends Application {
 
     }
 
-    private void onSearchButton(){
-        new SearchView().getDialog().showAndWait();
+    private void onSearchButton(StudentsController controller, MainModel model){
+        new SearchView(controller).getDialog().showAndWait();
     }
 
     private void onDeleteButton(StudentsController controller, MainModel model) {

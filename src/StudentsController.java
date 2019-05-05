@@ -91,4 +91,27 @@ public class StudentsController {
         ArrayList<Student> filtered = new ArrayList<>(list);
         return filtered;
     }
+
+    public ArrayList<Student> searchByStudentName(String name, String secondName, String surname) {
+        List list = model.students.stream().filter(student ->
+                ((equal(name, student.getFirstName())) && (equal(secondName, student.getSecondName()))
+                        && (equal(surname, student.getSurname())))).collect(Collectors.toList());
+
+        ArrayList<Student> filteredStudents = new ArrayList<>(list);
+
+        return filteredStudents;
+    }
+
+    public ArrayList<Student> searchByParentsName(String type, String name, String secondName, String surname) {
+        List list;
+        if (type == "mother") {
+            list = model.students.stream().filter(student -> (equal(name, student.getMother().getFirstName())) &&
+                    (equal(secondName, student.getMother().getSecondName())) && (equal(surname, student.getMother().getSurname()))).collect(Collectors.toList());
+        } else {
+            list = model.students.stream().filter(student -> (equal(name, student.getFather().getFirstName())) &&
+                    (equal(secondName, student.getFather().getSecondName())) && (equal(surname, student.getFather().getSurname()))).collect(Collectors.toList());
+        }
+        ArrayList<Student> filtered = new ArrayList<>(list);
+        return filtered;
+    }
 }
