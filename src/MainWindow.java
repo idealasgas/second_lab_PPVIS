@@ -22,15 +22,18 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.soap.Text;
 import java.awt.*;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainWindow extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    private ObservableList<Student> students;
-    private TableView<Student> table;
-    private ArrayList<Student> studentArrayList;
+//    private ObservableList<Student> students;
+//    private TableView<Student> table;
+//    private ArrayList<Student> studentArrayList;
+    private MainModel model;
+
 
     public void start(Stage primaryStage) throws ParserConfigurationException, SAXException, IOException {
         primaryStage.setTitle("лабораторная 2");
@@ -47,13 +50,16 @@ public class MainWindow extends Application {
         Button search = new Button("Search");
 
 
-        studentArrayList = new SAXExample().getStudents();
-        students = FXCollections.observableArrayList(studentArrayList);
-        table = new Table().getTable(students);
+        ArrayList<Student> studentArrayList = new SAXExample().getStudents();
+        ObservableList<Student> students = FXCollections.observableArrayList(studentArrayList);
+        TableView<Student> table = new Table().getTable(students);
+        model = new MainModel(studentArrayList, students);
         StudentsController studentsController = new StudentsController(studentArrayList);
+
 
         add.setOnAction(event -> onAddButton());
         search.setOnAction(event -> onSearchButton());
+        remove.setOnAction(event -> onDeleteButton(studentsController));
 
         toolBar.getItems().addAll(add, remove, search);
         VBox vBox = new VBox(toolBar, table);
@@ -156,7 +162,7 @@ public class MainWindow extends Application {
                 newStudent.setMother(mother);
                 newStudent.setFather(father);
 
-                students.add(newStudent);
+                model.students.add(newStudent);
 
                  DOMExample dom = new DOMExample();
                  dom.addRecord(studentFirstName.getText(), studentSecondName.getText(), studentSurname.getText(),
@@ -182,6 +188,6 @@ public class MainWindow extends Application {
     }
 
     private void onDeleteButton(StudentsController controller) {
-        
+//        new DeleteView().getDialog().showAndWait();
     }
 }

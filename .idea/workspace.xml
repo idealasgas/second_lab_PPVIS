@@ -4,8 +4,11 @@
     <list default="true" id="5a300e53-d8a1-4ff8-8a29-c53e58afa54f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/second_lab_ppvis/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/second_lab_ppvis/MainWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/second_lab_ppvis/StudentsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/second_lab_ppvis/StudentsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource/xml_file1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resource/xml_file1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StudentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudentsController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,15 +31,45 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="184" column="8" lean-forward="true" selection-start-line="184" selection-start-column="8" selection-end-line="184" selection-end-column="8" />
+            <state relative-caret-position="468">
+              <caret line="191" column="5" lean-forward="true" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#906#907#0" expanded="true" />
                 <element signature="e#934#935#0" expanded="true" />
-                <element signature="method#onAddButton#0;class#MainWindow#0" />
+                <element signature="method#start#0;class#MainWindow#0" />
                 <element signature="e#6907#6908#0" expanded="true" />
                 <element signature="e#6938#6939#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DeleteView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#591#592#0" expanded="true" />
+                <element signature="e#637#638#0" expanded="true" />
+                <element signature="method#disableButtons#0;class#DeleteView#0" />
+                <element signature="e#3139#3140#0" expanded="true" />
+                <element signature="e#3158#3159#0" expanded="true" />
+                <element signature="e#3189#3190#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="83" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,12 +91,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StudentsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+            <state relative-caret-position="328">
+              <caret line="15" column="55" lean-forward="true" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#252#253#0" expanded="true" />
                 <element signature="e#291#292#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Student.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="614">
+              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="23" />
+              <folding>
+                <element signature="e#623#624#0" expanded="true" />
+                <element signature="e#659#660#0" expanded="true" />
+                <element signature="e#703#704#0" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
+                <element signature="e#772#773#0" expanded="true" />
+                <element signature="e#801#802#0" expanded="true" />
+                <element signature="e#834#835#0" expanded="true" />
+                <element signature="e#863#864#0" expanded="true" />
+                <element signature="e#894#895#0" expanded="true" />
+                <element signature="e#925#926#0" expanded="true" />
+                <element signature="e#1024#1025#0" expanded="true" />
+                <element signature="e#1056#1057#0" expanded="true" />
+                <element signature="e#1093#1094#0" expanded="true" />
+                <element signature="e#1126#1127#0" expanded="true" />
+                <element signature="e#1160#1161#0" expanded="true" />
+                <element signature="e#1190#1191#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,13 +174,15 @@
         <option value="$PROJECT_DIR$/src/FullName.java" />
         <option value="$PROJECT_DIR$/src/Human.java" />
         <option value="$PROJECT_DIR$/src/Parent.java" />
-        <option value="$PROJECT_DIR$/src/Student.java" />
         <option value="$PROJECT_DIR$/src/SAXExample.java" />
         <option value="$PROJECT_DIR$/src/DOMExample.java" />
         <option value="$PROJECT_DIR$/src/Table.java" />
-        <option value="$PROJECT_DIR$/resource/xml_file1.xml" />
         <option value="$PROJECT_DIR$/src/SearchView.java" />
+        <option value="$PROJECT_DIR$/resource/xml_file1.xml" />
         <option value="$PROJECT_DIR$/src/StudentsController.java" />
+        <option value="$PROJECT_DIR$/src/Student.java" />
+        <option value="$PROJECT_DIR$/src/DeleteView.java" />
+        <option value="$PROJECT_DIR$/src/MainModel.java" />
         <option value="$PROJECT_DIR$/src/MainWindow.java" />
       </list>
     </option>
@@ -162,7 +224,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557048382082" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557050280813" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../javafx" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -221,13 +283,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35940000" />
+    <option name="totallyTimeSpent" value="37600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.07181208" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.07181208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -313,25 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#772#773#0" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#863#864#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#925#926#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DOMExample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1760">
@@ -349,13 +392,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/xml_file1.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -380,10 +416,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/StudentsController.java">
+    <entry file="file://$PROJECT_DIR$/resource/xml_file1.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="23" />
+          <folding>
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+            <element signature="e#894#895#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
+            <element signature="e#1024#1025#0" expanded="true" />
+            <element signature="e#1056#1057#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1190#1191#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StudentsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="15" column="55" lean-forward="true" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#252#253#0" expanded="true" />
@@ -392,15 +460,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/DeleteView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#591#592#0" expanded="true" />
+            <element signature="e#637#638#0" expanded="true" />
+            <element signature="method#disableButtons#0;class#DeleteView#0" />
+            <element signature="e#3139#3140#0" expanded="true" />
+            <element signature="e#3158#3159#0" expanded="true" />
+            <element signature="e#3189#3190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="83" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="184" column="8" lean-forward="true" selection-start-line="184" selection-start-column="8" selection-end-line="184" selection-end-column="8" />
+        <state relative-caret-position="468">
+          <caret line="191" column="5" lean-forward="true" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#906#907#0" expanded="true" />
             <element signature="e#934#935#0" expanded="true" />
-            <element signature="method#onAddButton#0;class#MainWindow#0" />
+            <element signature="method#start#0;class#MainWindow#0" />
             <element signature="e#6907#6908#0" expanded="true" />
             <element signature="e#6938#6939#0" expanded="true" />
           </folding>
