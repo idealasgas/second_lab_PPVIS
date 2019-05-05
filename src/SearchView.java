@@ -1,3 +1,4 @@
+import com.sun.org.apache.bcel.internal.generic.LADD;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -145,17 +146,36 @@ public class SearchView {
 
         RadioButton mother = new RadioButton("mother");
         RadioButton father = new RadioButton("father");
+        Button search = new Button("search");
+        Label lowerBoundLabel = new Label("lower bound:");
+        Label higherBoundLabel = new Label("higher bound:");
+        TextField lowerBound = new TextField();
+        TextField higherBound = new TextField();
+
+        GridPane grid = new GridPane();
+        grid.add(mother, 0, 0);
+        grid.add(father, 1, 0);
+        grid.add(lowerBoundLabel, 0, 1);
+        grid.add(lowerBound, 1, 1);
+        grid.add(higherBoundLabel, 0, 2);
+        grid.add(higherBound, 1, 2);
+        grid.add(search, 1, 3);
 
         radioButtons.getToggles().addAll(mother, father);
 
-        TextField number = new TextField();
+        search.setOnAction(event -> {
+            if (radioButtons.getSelectedToggle() == null) {
+                // алерт
+            } else {
+                RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
+                ObservableList<Student> studentsForTable = FXCollections.observableArrayList(controller.searchByParentsIncome(selected.getText(), lowerBound.getText(), higherBound.getText()));
+                TableView<Student> searchTable = new Table().getTable(studentsForTable);
+                box.getChildren().add(searchTable);
+            }
+        });
 
-        HBox container = new HBox();
-        container.setSpacing(10);
-        container.getChildren().addAll(mother, father, number);
-
-        box.getChildren().add(container);
+        box.getChildren().add(grid);
         disableButtons();
-        searchDialog.setHeight(200);
+        searchDialog.setHeight(500);
     }
 }

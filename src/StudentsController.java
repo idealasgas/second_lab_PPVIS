@@ -24,14 +24,6 @@ public class StudentsController {
         return filteredStudents;
     }
 
-    private boolean equal(String input, String value) {
-        if (input.isEmpty()) {
-            return true;
-        } else {
-            return input.equals(value);
-        }
-    }
-
     public ArrayList<Student> deleteByParentsName(String type, String name, String secondName, String surname){
         List list;
         if (type == "mother") {
@@ -124,5 +116,43 @@ public class StudentsController {
         }
         ArrayList<Student> filtered = new ArrayList<>(list);
         return filtered;
+    }
+
+    public ArrayList<Student> searchByParentsIncome(String parent, String lowerBound, String higherBound) {
+        List list;
+//        сделать булеаном
+        if (parent == "mother's income") {
+            list = model.students.stream().filter(student -> {
+                if (lowerBound.isEmpty()) {
+                    return (student.getMother().getIncome() < Integer.parseInt(higherBound));
+                } else if (higherBound.isEmpty()) {
+                    return (student.getMother().getIncome() > Integer.parseInt(lowerBound));
+                } else {
+                    return ((student.getMother().getIncome() > Integer.parseInt(lowerBound))
+                            && (student.getMother().getIncome() < Integer.parseInt(higherBound)));
+                }
+            }).collect(Collectors.toList());
+        } else {
+            list = model.students.stream().filter(student -> {
+                if (lowerBound.isEmpty()) {
+                    return (student.getFather().getIncome() < Integer.parseInt(higherBound));
+                } else if (higherBound.isEmpty()) {
+                    return (student.getFather().getIncome() > Integer.parseInt(lowerBound));
+                } else {
+                    return ((student.getFather().getIncome() > Integer.parseInt(lowerBound))
+                            && (student.getFather().getIncome() < Integer.parseInt(higherBound)));
+                }
+            }).collect(Collectors.toList());
+        }
+        ArrayList<Student> filtered = new ArrayList<>(list);
+        return filtered;
+    }
+
+    private boolean equal(String input, String value) {
+        if (input.isEmpty()) {
+            return true;
+        } else {
+            return input.equals(value);
+        }
     }
 }
