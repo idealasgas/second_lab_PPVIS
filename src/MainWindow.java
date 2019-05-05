@@ -21,9 +21,6 @@ public class MainWindow extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-//    private ObservableList<Student> students;
-//    private TableView<Student> table;
-//    private ArrayList<Student> studentArrayList;
     private MainModel model;
 
 
@@ -44,9 +41,9 @@ public class MainWindow extends Application {
 
         ArrayList<Student> studentArrayList = new SAXExample().getStudents();
         ObservableList<Student> students = FXCollections.observableArrayList(studentArrayList);
-        TableView<Student> table = new Table().getTable(students);
         model = new MainModel(studentArrayList, students);
         StudentsController studentsController = new StudentsController(model);
+        Paginator paginator = new Paginator(model);
 
 
         add.setOnAction(event -> onAddButton());
@@ -54,7 +51,7 @@ public class MainWindow extends Application {
         remove.setOnAction(event -> onDeleteButton(studentsController, model));
 
         toolBar.getItems().addAll(add, remove, search);
-        VBox vBox = new VBox(toolBar, table);
+        VBox vBox = new VBox(toolBar, paginator.getView());
 
         return vBox;
     }

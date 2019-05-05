@@ -60,12 +60,12 @@ public class SAXExample {
                 if (attributes.getValue("type").equals("mother")) {
                     Parent mother = new Parent(income, firstName, secondName, surname);
                     student.setMother(mother);
+                    students.add(student);
+                    student = null;
                 }
                 if (attributes.getValue("type").equals("father")) {
                     Parent father = new Parent(income, firstName, secondName, surname);
                     student.setFather(father);
-                    students.add(student);
-                    student = null;
                 }
             }
 
