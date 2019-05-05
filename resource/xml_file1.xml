@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<students>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><students>
     <student brothers="0" firstName="Mashenka" secondName="Georgievna" sisters="0" surname="Akhramenko">
         <parent firstName="Ira" income="1000" secondName="Vadimovna" surname="Akhramenko" type="mother"/>
         <parent firstName="Georgiy" income="1000" secondName="Arsentievich" surname="Akhramenko" type="father"/>
@@ -8,4 +7,8 @@
         <parent firstName="Anna" income="1000" secondName="Vladimirovna" surname="Lukashevich" type="mother"/>
         <parent firstName="Alexandr" income="1000" secondName="Dmitrievich" surname="Lukashevich" type="father"/>
     </student>
-</students>
+    <student brothers="2" firstName="Unity" secondName="Arsenio" sisters="2" surname="Blyadberg">
+        <parent firstName="Alice" income="1000" secondName="Cally" surname="Blyadberg" type="mother"/>
+        <parent firstName="Edward" income="1000" secondName="Olson" surname="Blyadberg" type="father"/>
+    </student>
+<student brothers="5" firstName="ывапр" secondName="увкп" sisters="5" surname="ывап"><parent firstName="кек" secondName="кеку" surname="нпак" type="mother"/><parent firstName="вен" secondName="апроо" surname="апро" type="father"/></student></students>

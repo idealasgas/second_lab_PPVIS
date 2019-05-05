@@ -1,13 +1,7 @@
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-
-import javax.xml.soap.Text;
-import java.util.ArrayList;
 
 public class SearchView {
     private Button searchByStudentNameButton;
@@ -16,9 +10,9 @@ public class SearchView {
     private Button searchByParentIncomeButton;
     private VBox box;
     private Dialog searchDialog;
-    private Search search;
+    private SearchController search;
 
-    SearchView(Search searchController) {
+    SearchView(SearchController searchController) {
         this.search = searchController;
     }
 
@@ -41,7 +35,6 @@ public class SearchView {
         buttons.getChildren().addAll(searchByStudentNameButton, searchByParentNameButton, searchByNumberOfSiblingsButton, searchByParentIncomeButton);
         box.getChildren().add(buttons);
 
-        // добавить флаг, который будет передаваться в контроллер чтобы понимать по чему искать
         searchByStudentNameButton.setOnAction(event -> searchByName("student"));
         searchByParentNameButton.setOnAction(event -> searchByName("parent"));
         searchByNumberOfSiblingsButton.setOnAction(event -> searchByNumberOfSiblings());

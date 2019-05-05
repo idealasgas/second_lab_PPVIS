@@ -1,7 +1,4 @@
 import javafx.application.Application;
-import javafx.beans.property.SimpleFloatProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -14,13 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Callback;
-import javafx.util.Pair;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.soap.Text;
-import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -29,7 +22,10 @@ public class MainWindow extends Application {
         launch(args);
     }
     private ObservableList<Student> students;
-    private Search searchController;
+    private SearchController searchController;
+    private DeleteController deleteController;
+    private TableView<Student> table;
+    private ArrayList<Student> studentArrayList;
 
     public void start(Stage primaryStage) throws ParserConfigurationException, SAXException, IOException {
         primaryStage.setTitle("лабораторная 2");
@@ -47,11 +43,12 @@ public class MainWindow extends Application {
 
         add.setOnAction(event -> onAddButton());
         search.setOnAction(event -> onSearch());
+        remove.setOnAction(event -> onDelete());
 
-        TableView<Student> table;
-        ArrayList<Student> studentArrayList = new SAXExample().getStudents();
+        studentArrayList = new SAXExample().getStudents();
         students = FXCollections.observableArrayList(studentArrayList);
-        searchController = new Search(studentArrayList);
+        searchController = new SearchController(studentArrayList);
+        deleteController = new DeleteController(studentArrayList);
         table = new ViewTable().getTable(studentArrayList);
 
 
@@ -175,5 +172,13 @@ public class MainWindow extends Application {
     private void onSearch() {
         SearchView view = new SearchView(searchController);
         view.getDialog().showAndWait();
+    }
+
+    private void onDelete() {
+        DeleteView view = new DeleteView(deleteController);
+        view.getDialog().showAndWait();
+        students.removeAll(view.getStudents());
+
+        studentArrayList.removeAll(view.getStudents());
     }
 }

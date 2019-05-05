@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Search {
+public class SearchController {
     private ArrayList<Student> students;
 
-    Search(ArrayList<Student> students) {
+    SearchController(ArrayList<Student> students) {
         this.students = students;
     }
 
