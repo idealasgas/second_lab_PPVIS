@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<students>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><students>
     <student brothers="0" firstName="Mashenka" secondName="Georgievna" sisters="0" surname="Akhramenko">
         <parent firstName="Ira" income="1000" secondName="Vadimovna" surname="Akhramenko" type="mother"/>
         <parent firstName="Georgiy" income="1000" secondName="Arsentievich" surname="Akhramenko" type="father"/>
