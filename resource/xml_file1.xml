@@ -7,4 +7,4 @@
         <parent firstName="Anna" income="1000" secondName="Vladimirovna" surname="Lukashevich" type="mother"/>
         <parent firstName="Alexandr" income="1000" secondName="Dmitrievich" surname="Lukashevich" type="father"/>
     </student>
-</students>
+<student brothers="5" firstName="dfghj" secondName="fghjk" sisters="5" surname="fghjk"><parent firstName="fghj" secondName="ghvfyt" surname="fytfy" type="mother"/><parent firstName="ghv" secondName="hgv" surname="hgv" type="father"/></student></students>

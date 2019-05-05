@@ -22,6 +22,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.soap.Text;
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainWindow extends Application {
     public static void main(String[] args) {
@@ -29,6 +30,7 @@ public class MainWindow extends Application {
     }
     private ObservableList<Student> students;
     private TableView<Student> table;
+    private ArrayList<Student> studentArrayList;
 
     public void start(Stage primaryStage) throws ParserConfigurationException, SAXException, IOException {
         primaryStage.setTitle("лабораторная 2");
@@ -44,10 +46,14 @@ public class MainWindow extends Application {
         Button remove = new Button("Remove");
         Button search = new Button("Search");
 
-        add.setOnAction(event -> onAddButton());
 
-        students = FXCollections.observableArrayList(new SAXExample().getStudents());
+        studentArrayList = new SAXExample().getStudents();
+        students = FXCollections.observableArrayList(studentArrayList);
         table = new Table().getTable(students);
+        StudentsController studentsController = new StudentsController(studentArrayList);
+
+        add.setOnAction(event -> onAddButton());
+        search.setOnAction(event -> onSearchButton());
 
         toolBar.getItems().addAll(add, remove, search);
         VBox vBox = new VBox(toolBar, table);
@@ -169,5 +175,13 @@ public class MainWindow extends Application {
 
 
 
+    }
+
+    private void onSearchButton(){
+        new SearchView().getDialog().showAndWait();
+    }
+
+    private void onDeleteButton(StudentsController controller) {
+        
     }
 }
