@@ -6,16 +6,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class StudentsController {
-    private ArrayList<Student> students;
+    private MainModel model;
 
-    public StudentsController(ArrayList<Student> students) {
-        this.students = students;
+    public StudentsController(MainModel model) {
+        this.model = model;
     }
 
     public ArrayList<Student> deleteByName(String name, String secondName, String surname) {
-        List list = students.stream().filter(student ->
+        List list = model.students.stream().filter(student ->
                 (name.equals(student.getFirstName()) || secondName.equals(student.getSecondName())
                         || surname.equals(student.getSurname()))).collect(Collectors.toList());
+        model.students.removeIf(student -> student.getFirstName().equals(name) && student.getSecondName().equals(secondName) && student.getSurname().equals(surname));
 
         ArrayList<Student> filteredStudents = new ArrayList<>(list);
 

@@ -54,12 +54,12 @@ public class MainWindow extends Application {
         ObservableList<Student> students = FXCollections.observableArrayList(studentArrayList);
         TableView<Student> table = new Table().getTable(students);
         model = new MainModel(studentArrayList, students);
-        StudentsController studentsController = new StudentsController(studentArrayList);
+        StudentsController studentsController = new StudentsController(model);
 
 
         add.setOnAction(event -> onAddButton());
         search.setOnAction(event -> onSearchButton());
-        remove.setOnAction(event -> onDeleteButton(studentsController));
+        remove.setOnAction(event -> onDeleteButton(studentsController, model));
 
         toolBar.getItems().addAll(add, remove, search);
         VBox vBox = new VBox(toolBar, table);
@@ -187,7 +187,7 @@ public class MainWindow extends Application {
         new SearchView().getDialog().showAndWait();
     }
 
-    private void onDeleteButton(StudentsController controller) {
-//        new DeleteView().getDialog().showAndWait();
+    private void onDeleteButton(StudentsController controller, MainModel model) {
+        new DeleteView(controller).getDialog().showAndWait();
     }
 }
