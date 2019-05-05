@@ -114,4 +114,15 @@ public class StudentsController {
         ArrayList<Student> filtered = new ArrayList<>(list);
         return filtered;
     }
+
+    public ArrayList<Student> searchByNumberOfSiblings(String type, String number) {
+        List list;
+        if (type == "brothers") {
+            list = model.students.stream().filter(student -> (student.getBrothers() == Integer.parseInt(number))).collect(Collectors.toList());
+        } else {
+            list = model.students.stream().filter(student -> (student.getSisters() == Integer.parseInt(number))).collect(Collectors.toList());
+        }
+        ArrayList<Student> filtered = new ArrayList<>(list);
+        return filtered;
+    }
 }

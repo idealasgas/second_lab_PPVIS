@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a300e53-d8a1-4ff8-8a29-c53e58afa54f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StudentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudentsController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,17 +38,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SearchView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="105" column="148" selection-start-line="105" selection-start-column="148" selection-end-line="105" selection-end-column="148" />
+            <state relative-caret-position="468">
+              <caret line="138" column="13" lean-forward="true" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#603#604#0" expanded="true" />
                 <element signature="e#649#650#0" expanded="true" />
                 <element signature="method#disableButtons#0;class#SearchView#0" />
-                <element signature="method#searchByNumberOfSiblings#0;class#SearchView#0" />
+                <element signature="method#searchByName#0;class#SearchView#0" />
                 <element signature="method#searchByParentIncome#0;class#SearchView#0" />
               </folding>
             </state>
@@ -78,10 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StudentsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
+            <state>
               <caret line="113" selection-start-line="113" selection-end-line="113" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -206,8 +203,8 @@
         <option value="$PROJECT_DIR$/src/DeleteView.java" />
         <option value="$PROJECT_DIR$/resource/xml_file1.xml" />
         <option value="$PROJECT_DIR$/src/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/SearchView.java" />
         <option value="$PROJECT_DIR$/src/StudentsController.java" />
+        <option value="$PROJECT_DIR$/src/SearchView.java" />
       </list>
     </option>
   </component>
@@ -248,7 +245,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557065719116" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557066185345" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../javafx" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -307,7 +304,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48404000" />
+    <option name="totallyTimeSpent" value="48832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -322,7 +319,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.20679887" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24504249" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -523,21 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="105" column="148" selection-start-line="105" selection-start-column="148" selection-end-line="105" selection-end-column="148" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="method#disableButtons#0;class#SearchView#0" />
-            <element signature="method#searchByNumberOfSiblings#0;class#SearchView#0" />
-            <element signature="method#searchByParentIncome#0;class#SearchView#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -550,7 +532,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StudentsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
+        <state>
           <caret line="113" selection-start-line="113" selection-end-line="113" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -560,6 +542,21 @@
             <element signature="method#deleteByParentsName#0;class#StudentsController#0" />
             <element signature="method#deleteByNumberOfSiblings#0;class#StudentsController#0" />
             <element signature="method#deleteByParentsIncome#0;class#StudentsController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="138" column="13" lean-forward="true" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="method#disableButtons#0;class#SearchView#0" />
+            <element signature="method#searchByName#0;class#SearchView#0" />
+            <element signature="method#searchByParentIncome#0;class#SearchView#0" />
           </folding>
         </state>
       </provider>

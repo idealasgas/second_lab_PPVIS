@@ -131,10 +131,11 @@ public class SearchView {
             if (radioButtons.getSelectedToggle() == null) {
                 // алерт
             } else {
-//                RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
-//                TableView<Student> searchTable = new ViewTable().getTable(search.searchByNumberOfSiblings(selected.getText(), number.getText()));
-//                box.getChildren().add(searchTable);
-//                searchDialog.setHeight(300);
+                RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
+                ObservableList<Student> studentsForTable = FXCollections.observableArrayList(controller.searchByNumberOfSiblings(selected.getText(), number.getText()));
+                TableView<Student> searchTable = new Table().getTable(studentsForTable);
+                box.getChildren().add(searchTable);
+                searchDialog.setHeight(300);
             }
         });
     }
