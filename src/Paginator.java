@@ -30,7 +30,7 @@ public class Paginator {
         Button previous = new Button("previous");
         Button first = new Button("first");
         Button last = new Button("last");
-        Label currentPageLabel = new Label("1");
+        Label currentPageLabel = new Label("1/" + (pages.size()));
 
         GridPane grid = new GridPane();
         grid.add(first, 0, 0);
@@ -42,7 +42,7 @@ public class Paginator {
         first.setOnAction(event -> {
             table.setItems(getPage(0));
             currentPage = 0;
-            currentPageLabel.setText(Integer.toString(currentPage + 1));
+            currentPageLabel.setText((currentPage + 1) + "/" + pages.size());
 
         });
 
@@ -51,7 +51,7 @@ public class Paginator {
             } else {
                 table.setItems(getPage(currentPage - 1));
                 currentPage -= 1;
-                currentPageLabel.setText(Integer.toString(currentPage + 1));
+                currentPageLabel.setText((currentPage + 1) + "/" + pages.size());
             }
         });
 
@@ -61,13 +61,13 @@ public class Paginator {
             } else {
                 table.setItems(getPage(currentPage + 1));
                 currentPage += 1;
-                currentPageLabel.setText(Integer.toString(currentPage + 1));
+                currentPageLabel.setText((currentPage + 1) + "/" + pages.size());
             }
         });
 
         last.setOnAction(event -> {
             table.setItems(getPage(pages.size() - 1));
-            currentPageLabel.setText(Integer.toString(pages.size()));
+            currentPageLabel.setText((pages.size()) + "/" + pages.size());
         });
 
         VBox container = new VBox();

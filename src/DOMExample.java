@@ -50,8 +50,8 @@ public class DOMExample {
             studentBrothers.setValue(Integer.toString(brothers));
             student.setAttributeNode(studentBrothers);
 
-            createParent(mothersFirstName, mothersSecondName, mothersSurname, "mother", mothersIncome);
             createParent(fathersFirstName, fathersSecondName, fathersSurname, "father", fathersIncome);
+            createParent(mothersFirstName, mothersSecondName, mothersSurname, "mother", mothersIncome);
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
@@ -100,6 +100,7 @@ public class DOMExample {
         parent.setAttributeNode(parentSecondName);
         parent.setAttributeNode(parentSurname);
         parent.setAttributeNode(parentType);
+        parent.setAttributeNode(parentIncome);
 
         student.appendChild(parent);
     }
