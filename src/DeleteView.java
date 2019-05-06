@@ -14,9 +14,11 @@ public class DeleteView {
     private Dialog deleteDialog;
     private StudentsController controller;
     private ArrayList<Student> students;
+    private Paginator paginator;
 
-    DeleteView(StudentsController controller) {
+    DeleteView(StudentsController controller, Paginator paginator) {
         this.controller = controller;
+        this.paginator = paginator;
     }
 
     public Dialog getDialog() {
@@ -207,6 +209,7 @@ public class DeleteView {
             alert.setContentText("Nothing found");
         } else {
             alert.setContentText(students.size() + " students have been deleted just now.");
+            paginator.refreshPages();
         }
 
         alert.showAndWait();

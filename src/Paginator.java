@@ -24,7 +24,7 @@ public class Paginator {
     }
 
     public VBox getView() {
-        table  = new Table().getTable(getFirstPage());
+        table  = new Table().getTable(getPage(0));
 
         Button next = new Button("next");
         Button previous = new Button("previous");
@@ -40,7 +40,7 @@ public class Paginator {
         grid.add(last, 4, 0);
 
         first.setOnAction(event -> {
-            table.setItems(getFirstPage());
+            table.setItems(getPage(0));
             currentPage = 0;
             currentPageLabel.setText(Integer.toString(currentPage + 1));
 
@@ -75,15 +75,17 @@ public class Paginator {
         return container;
     }
 
-    public ObservableList<Student> getFirstPage(){
-//        TableView<Student> firstPage = new Table().getTable(FXCollections.observableArrayList(pages.get(0)));
-//        return firstPage;
-        ObservableList<Student> firstPage = FXCollections.observableArrayList(pages.get(0));
-        return firstPage;
-    }
-
     private ObservableList<Student> getPage(int index) {
         ObservableList<Student> page = FXCollections.observableArrayList(pages.get(index));
         return page;
+    }
+
+    public void refreshPages() {
+        pages.clear();
+        for (int i = 0; i < model.studentArrayList.size(); i += 10) {
+            pages.add(new ArrayList<>(model.studentArrayList.subList(i, Math.min(model.studentArrayList.size(), i + 10))));
+        }
+        currentPage = 0;
+        table.setItems(FXCollections.observableArrayList(pages.get(0)));
     }
 }
