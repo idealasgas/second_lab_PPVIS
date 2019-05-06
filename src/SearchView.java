@@ -8,6 +8,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.util.ArrayList;
+
 public class SearchView {
     private Button searchByStudentNameButton;
     private Button searchByParentNameButton;
@@ -16,9 +18,11 @@ public class SearchView {
     private VBox box;
     private Dialog searchDialog;
     private StudentsController controller;
+    private Paginator paginator;
 
-    SearchView(StudentsController controller) {
+    SearchView(StudentsController controller, Paginator paginator) {
         this.controller = controller;
+        this.paginator = paginator;
     }
 
     public Dialog getDialog() {
@@ -95,18 +99,16 @@ public class SearchView {
 
         searchButton.setOnAction(event -> {
             if (type.equals("student")) {
-                ObservableList<Student> studentsForTable = FXCollections.observableArrayList(controller.searchByStudentName(firstName.getText(), secondName.getText(), surname.getText()));
-                TableView searchTable = new Table().getTable(studentsForTable);
-                box.getChildren().add(searchTable);
+                ArrayList<Student> studentsForTable = controller.searchByStudentName(firstName.getText(), secondName.getText(), surname.getText());
+                showResultsTable(studentsForTable);
             }
             if (type.equals("parent")) {
                 if (radioButtons.getSelectedToggle() == null) {
                     // алерт
                 } else {
                     RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
-                    ObservableList<Student> studentsForTable = FXCollections.observableArrayList(controller.searchByParentsName(selected.getText(), firstName.getText(), secondName.getText(), surname.getText()));
-                    TableView searchTable = new Table().getTable(studentsForTable);
-                    box.getChildren().add(searchTable);
+                    ArrayList<Student> studentsForTable = controller.searchByParentsName(selected.getText(), firstName.getText(), secondName.getText(), surname.getText());
+                    showResultsTable(studentsForTable);
                 }
             }
         });
@@ -133,9 +135,8 @@ public class SearchView {
                 // алерт
             } else {
                 RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
-                ObservableList<Student> studentsForTable = FXCollections.observableArrayList(controller.searchByNumberOfSiblings(selected.getText(), number.getText()));
-                TableView<Student> searchTable = new Table().getTable(studentsForTable);
-                box.getChildren().add(searchTable);
+                ArrayList<Student> studentsForTable = controller.searchByNumberOfSiblings(selected.getText(), number.getText());
+                showResultsTable(studentsForTable);
                 searchDialog.setHeight(300);
             }
         });
@@ -168,14 +169,18 @@ public class SearchView {
                 // алерт
             } else {
                 RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
-                ObservableList<Student> studentsForTable = FXCollections.observableArrayList(controller.searchByParentsIncome(selected.getText(), lowerBound.getText(), higherBound.getText()));
-                TableView<Student> searchTable = new Table().getTable(studentsForTable);
-                box.getChildren().add(searchTable);
+                ArrayList<Student> studentsForTable = controller.searchByParentsIncome(selected.getText(), lowerBound.getText(), higherBound.getText());
+                showResultsTable(studentsForTable);
             }
         });
 
         box.getChildren().add(grid);
         disableButtons();
         searchDialog.setHeight(500);
+    }
+
+    private void showResultsTable(ArrayList<Student> studentArrayList) {
+        paginator = new Paginator(studentArrayList);
+        box.getChildren().add(paginator.getView());
     }
 }

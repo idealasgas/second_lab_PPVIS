@@ -47,7 +47,7 @@ public class MainWindow extends Application {
 
 
         add.setOnAction(event -> onAddButton(studentsController, paginator));
-        search.setOnAction(event -> onSearchButton(studentsController));
+        search.setOnAction(event -> onSearchButton(studentsController, paginator));
         remove.setOnAction(event -> onDeleteButton(studentsController, paginator));
 
         toolBar.getItems().addAll(add, remove, search);
@@ -60,8 +60,8 @@ public class MainWindow extends Application {
         new AddView(controller, paginator).getDialog().showAndWait();
     }
 
-    private void onSearchButton(StudentsController controller){
-        new SearchView(controller).getDialog().showAndWait();
+    private void onSearchButton(StudentsController controller, Paginator paginator){
+        new SearchView(controller, paginator).getDialog().showAndWait();
     }
 
     private void onDeleteButton(StudentsController controller, Paginator paginator) {

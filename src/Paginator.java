@@ -23,6 +23,13 @@ public class Paginator {
         this.currentPage = 0;
     }
 
+    public Paginator(ArrayList<Student> arrayListOfStudents) {
+        for (int i = 0; i < arrayListOfStudents.size(); i += 10) {
+            pages.add(new ArrayList<>(arrayListOfStudents.subList(i, Math.min(arrayListOfStudents.size(), i + 10))));
+        }
+        this.currentPage = 0;
+    }
+
     public VBox getView() {
         table  = new Table().getTable(getPage(0));
 
