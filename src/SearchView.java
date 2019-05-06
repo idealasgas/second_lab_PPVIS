@@ -1,12 +1,9 @@
-import com.sun.org.apache.bcel.internal.generic.LADD;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 
@@ -180,7 +177,12 @@ public class SearchView {
     }
 
     private void showResultsTable(ArrayList<Student> studentArrayList) {
-        paginator = new Paginator(studentArrayList);
-        box.getChildren().add(paginator.getView());
+        if (studentArrayList.size() == 0) {
+            Text message = new Text("Nothing found.");
+            box.getChildren().add(message);
+        } else {
+            paginator = new Paginator(studentArrayList);
+            box.getChildren().add(paginator.getView());
+        }
     }
 }

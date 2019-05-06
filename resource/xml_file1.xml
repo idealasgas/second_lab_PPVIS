@@ -207,4 +207,4 @@
         <parent firstName="Sammy" income="2496" secondName="Jame" surname="Rath" type="father"/>
         <parent firstName="Valentine" income="844" secondName="Camilla" surname="Rath" type="mother"/>
     </student>
-</students>
+<student brothers="7" firstName="fghm" secondName="dfghjk" sisters="7" surname="dfghj"><parent firstName="dfghjk" income="9" secondName="dfghjk" surname="dfgh" type="father"/><parent firstName="dfghjk" income="6" secondName="dfghjk" surname="dfghjk" type="mother"/></student></students>
