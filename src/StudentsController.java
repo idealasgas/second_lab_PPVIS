@@ -102,6 +102,26 @@ public class StudentsController {
         return filtered;
     }
 
+    public void addStudent(String name, String secondName, String surname, String sisters, String brothers, String fathersIncome,
+                           String mothersIncome, String fathersName, String mothersName, String fathersSecondName,
+                           String mothersSecondName, String fathersSurname, String mothersSurname) {
+        Student newStudent = new Student(name, secondName, surname, Integer.parseInt(sisters), Integer.parseInt(brothers));
+        Parent mother = new Parent(Integer.parseInt(mothersIncome), mothersName, mothersSecondName, mothersSurname);
+        Parent father = new Parent(Integer.parseInt(fathersIncome), fathersName, fathersSecondName, fathersSurname);
+        newStudent.setMother(mother);
+        newStudent.setFather(father);
+
+        model.students.add(newStudent);
+        model.studentArrayList.add(newStudent);
+
+        DOMExample dom = new DOMExample();
+        dom.addRecord(name, secondName, surname, mothersName, mothersSecondName, mothersSurname,
+                fathersName, fathersSecondName, fathersSurname,
+                Integer.parseInt(fathersIncome), Integer.parseInt(mothersIncome),
+                Integer.parseInt(brothers), Integer.parseInt(sisters)
+        );
+    }
+
     private boolean equal(String input, String value) {
         if (input.isEmpty()) {
             return true;

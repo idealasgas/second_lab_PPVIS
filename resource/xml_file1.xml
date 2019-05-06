@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<students>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><students>
     <student brothers="0" firstName="Mashenka" secondName="Georgievna" sisters="0" surname="Akhramenko">
         <parent firstName="Georgiy" income="1000" secondName="Arsentievich" surname="Akhramenko" type="father"/>
         <parent firstName="Ira" income="1000" secondName="Vadimovna" surname="Akhramenko" type="mother"/>
@@ -8,204 +7,204 @@
         <parent firstName="Alexandr" income="1000" secondName="Dmitrievich" surname="Lukashevich" type="father"/>
         <parent firstName="Anna" income="1000" secondName="Vladimirovna" surname="Lukashevich" type="mother"/>
     </student>
-    <student firstName="Brady" secondName="Crona" surname="Ebert" sisters="4" brothers="2">
-        <parent firstName="Freddy" secondName="Royal" surname="Ebert" income="2077" type="father"/>
-        <parent firstName="Daphine" secondName="Rebbeca" surname="Ebert" income="1357" type="mother"/>
+    <student brothers="2" firstName="Brady" secondName="Crona" sisters="4" surname="Ebert">
+        <parent firstName="Freddy" income="2077" secondName="Royal" surname="Ebert" type="father"/>
+        <parent firstName="Daphine" income="1357" secondName="Rebbeca" surname="Ebert" type="mother"/>
     </student>
-    <student firstName="Broderick" secondName="Farrell" surname="Torp" sisters="0" brothers="3">
-        <parent firstName="Frances" secondName="Jae" surname="Torp" income="1252" type="father"/>
-        <parent firstName="Helene" secondName="Abbey" surname="Torp" income="1378" type="mother"/>
+    <student brothers="3" firstName="Broderick" secondName="Farrell" sisters="0" surname="Torp">
+        <parent firstName="Frances" income="1252" secondName="Jae" surname="Torp" type="father"/>
+        <parent firstName="Helene" income="1378" secondName="Abbey" surname="Torp" type="mother"/>
     </student>
-    <student firstName="Ethan" secondName="Walsh" surname="McClure" sisters="1" brothers="2">
-        <parent firstName="Jamey" secondName="Jeramy" surname="McClure" income="611" type="father"/>
-        <parent firstName="Krystin" secondName="Alysha" surname="McClure" income="2224" type="mother"/>
+    <student brothers="2" firstName="Ethan" secondName="Walsh" sisters="1" surname="McClure">
+        <parent firstName="Jamey" income="611" secondName="Jeramy" surname="McClure" type="father"/>
+        <parent firstName="Krystin" income="2224" secondName="Alysha" surname="McClure" type="mother"/>
     </student>
-    <student firstName="Milan" secondName="Pollich" surname="Bauch" sisters="3" brothers="5">
-        <parent firstName="Jason" secondName="Alphonso" surname="Bauch" income="2365" type="father"/>
-        <parent firstName="Fanny" secondName="Alex" surname="Bauch" income="1690" type="mother"/>
+    <student brothers="5" firstName="Milan" secondName="Pollich" sisters="3" surname="Bauch">
+        <parent firstName="Jason" income="2365" secondName="Alphonso" surname="Bauch" type="father"/>
+        <parent firstName="Fanny" income="1690" secondName="Alex" surname="Bauch" type="mother"/>
     </student>
-    <student firstName="Nelson" secondName="Rosenbaum" surname="Carroll" sisters="3" brothers="3">
-        <parent firstName="Theo" secondName="Adalberto" surname="Carroll" income="1602" type="father"/>
-        <parent firstName="Marquerite" secondName="Rena" surname="Carroll" income="1932" type="mother"/>
+    <student brothers="3" firstName="Nelson" secondName="Rosenbaum" sisters="3" surname="Carroll">
+        <parent firstName="Theo" income="1602" secondName="Adalberto" surname="Carroll" type="father"/>
+        <parent firstName="Marquerite" income="1932" secondName="Rena" surname="Carroll" type="mother"/>
     </student>
-    <student firstName="Jimmy" secondName="Connelly" surname="Beahan" sisters="4" brothers="2">
-        <parent firstName="Nicholas" secondName="Mitchell" surname="Beahan" income="1315" type="father"/>
-        <parent firstName="Lesley" secondName="Dorothy" surname="Beahan" income="2433" type="mother"/>
+    <student brothers="2" firstName="Jimmy" secondName="Connelly" sisters="4" surname="Beahan">
+        <parent firstName="Nicholas" income="1315" secondName="Mitchell" surname="Beahan" type="father"/>
+        <parent firstName="Lesley" income="2433" secondName="Dorothy" surname="Beahan" type="mother"/>
     </student>
-    <student firstName="Brandi" secondName="Friesen" surname="Pagac" sisters="1" brothers="1">
-        <parent firstName="Clint" secondName="Jordan" surname="Pagac" income="784" type="father"/>
-        <parent firstName="Reiko" secondName="Justine" surname="Pagac" income="2187" type="mother"/>
+    <student brothers="1" firstName="Brandi" secondName="Friesen" sisters="1" surname="Pagac">
+        <parent firstName="Clint" income="784" secondName="Jordan" surname="Pagac" type="father"/>
+        <parent firstName="Reiko" income="2187" secondName="Justine" surname="Pagac" type="mother"/>
     </student>
-    <student firstName="Margeret" secondName="Feeney" surname="Bernhard" sisters="3" brothers="5">
-        <parent firstName="Darell" secondName="Brendon" surname="Bernhard" income="1845" type="father"/>
-        <parent firstName="Breann" secondName="Tommye" surname="Bernhard" income="737" type="mother"/>
+    <student brothers="5" firstName="Margeret" secondName="Feeney" sisters="3" surname="Bernhard">
+        <parent firstName="Darell" income="1845" secondName="Brendon" surname="Bernhard" type="father"/>
+        <parent firstName="Breann" income="737" secondName="Tommye" surname="Bernhard" type="mother"/>
     </student>
-    <student firstName="Maxwell" secondName="Borer" surname="Stroman" sisters="2" brothers="2">
-        <parent firstName="Wade" secondName="Wilbert" surname="Stroman" income="2348" type="father"/>
-        <parent firstName="Anne" secondName="Claudia" surname="Stroman" income="1743" type="mother"/>
+    <student brothers="2" firstName="Maxwell" secondName="Borer" sisters="2" surname="Stroman">
+        <parent firstName="Wade" income="2348" secondName="Wilbert" surname="Stroman" type="father"/>
+        <parent firstName="Anne" income="1743" secondName="Claudia" surname="Stroman" type="mother"/>
     </student>
-    <student firstName="Laurena" secondName="Bauch" surname="Nitzsche" sisters="2" brothers="2">
-        <parent firstName="Larry" secondName="Nick" surname="Nitzsche" income="2185" type="father"/>
-        <parent firstName="Digna" secondName="Rose" surname="Nitzsche" income="891" type="mother"/>
+    <student brothers="2" firstName="Laurena" secondName="Bauch" sisters="2" surname="Nitzsche">
+        <parent firstName="Larry" income="2185" secondName="Nick" surname="Nitzsche" type="father"/>
+        <parent firstName="Digna" income="891" secondName="Rose" surname="Nitzsche" type="mother"/>
     </student>
-    <student firstName="Eli" secondName="Frami" surname="Hessel" sisters="3" brothers="5">
-        <parent firstName="Avery" secondName="Chad" surname="Hessel" income="1352" type="father"/>
-        <parent firstName="Simona" secondName="Lakisha" surname="Hessel" income="1498" type="mother"/>
+    <student brothers="5" firstName="Eli" secondName="Frami" sisters="3" surname="Hessel">
+        <parent firstName="Avery" income="1352" secondName="Chad" surname="Hessel" type="father"/>
+        <parent firstName="Simona" income="1498" secondName="Lakisha" surname="Hessel" type="mother"/>
     </student>
-    <student firstName="Santiago" secondName="Koepp" surname="Erdman" sisters="5" brothers="3">
-        <parent firstName="Eugene" secondName="Agustin" surname="Erdman" income="2269" type="father"/>
-        <parent firstName="Carmelita" secondName="Gail" surname="Erdman" income="918" type="mother"/>
+    <student brothers="3" firstName="Santiago" secondName="Koepp" sisters="5" surname="Erdman">
+        <parent firstName="Eugene" income="2269" secondName="Agustin" surname="Erdman" type="father"/>
+        <parent firstName="Carmelita" income="918" secondName="Gail" surname="Erdman" type="mother"/>
     </student>
-    <student firstName="Stephen" secondName="Kuphal" surname="Lehner" sisters="2" brothers="0">
-        <parent firstName="Donald" secondName="Toney" surname="Lehner" income="2285" type="father"/>
-        <parent firstName="Tiffany" secondName="Asha" surname="Lehner" income="1492" type="mother"/>
+    <student brothers="0" firstName="Stephen" secondName="Kuphal" sisters="2" surname="Lehner">
+        <parent firstName="Donald" income="2285" secondName="Toney" surname="Lehner" type="father"/>
+        <parent firstName="Tiffany" income="1492" secondName="Asha" surname="Lehner" type="mother"/>
     </student>
-    <student firstName="Tammara" secondName="Schmidt" surname="Rolfson" sisters="0" brothers="0">
-        <parent firstName="Andreas" secondName="Earl" surname="Rolfson" income="1737" type="father"/>
-        <parent firstName="Shelli" secondName="Towanda" surname="Rolfson" income="1762" type="mother"/>
+    <student brothers="0" firstName="Tammara" secondName="Schmidt" sisters="0" surname="Rolfson">
+        <parent firstName="Andreas" income="1737" secondName="Earl" surname="Rolfson" type="father"/>
+        <parent firstName="Shelli" income="1762" secondName="Towanda" surname="Rolfson" type="mother"/>
     </student>
-    <student firstName="Etsuko" secondName="Mohr" surname="Tillman" sisters="4" brothers="0">
-        <parent firstName="Bart" secondName="Herb" surname="Tillman" income="745" type="father"/>
-        <parent firstName="Alayna" secondName="Echo" surname="Tillman" income="865" type="mother"/>
+    <student brothers="0" firstName="Etsuko" secondName="Mohr" sisters="4" surname="Tillman">
+        <parent firstName="Bart" income="745" secondName="Herb" surname="Tillman" type="father"/>
+        <parent firstName="Alayna" income="865" secondName="Echo" surname="Tillman" type="mother"/>
     </student>
-    <student firstName="Freida" secondName="Hickle" surname="Halvorson" sisters="3" brothers="0">
-        <parent firstName="Ramon" secondName="Darrin" surname="Halvorson" income="2334" type="father"/>
-        <parent firstName="Sudie" secondName="Exie" surname="Halvorson" income="834" type="mother"/>
+    <student brothers="0" firstName="Freida" secondName="Hickle" sisters="3" surname="Halvorson">
+        <parent firstName="Ramon" income="2334" secondName="Darrin" surname="Halvorson" type="father"/>
+        <parent firstName="Sudie" income="834" secondName="Exie" surname="Halvorson" type="mother"/>
     </student>
-    <student firstName="Shantell" secondName="Haag" surname="Glover" sisters="2" brothers="1">
-        <parent firstName="Michel" secondName="Dick" surname="Glover" income="1486" type="father"/>
-        <parent firstName="Kathline" secondName="Crista" surname="Glover" income="1940" type="mother"/>
+    <student brothers="1" firstName="Shantell" secondName="Haag" sisters="2" surname="Glover">
+        <parent firstName="Michel" income="1486" secondName="Dick" surname="Glover" type="father"/>
+        <parent firstName="Kathline" income="1940" secondName="Crista" surname="Glover" type="mother"/>
     </student>
-    <student firstName="Tessie" secondName="Lueilwitz" surname="Deckow" sisters="4" brothers="0">
-        <parent firstName="Normand" secondName="Abdul" surname="Deckow" income="575" type="father"/>
-        <parent firstName="Meghann" secondName="Demetra" surname="Deckow" income="1962" type="mother"/>
+    <student brothers="0" firstName="Tessie" secondName="Lueilwitz" sisters="4" surname="Deckow">
+        <parent firstName="Normand" income="575" secondName="Abdul" surname="Deckow" type="father"/>
+        <parent firstName="Meghann" income="1962" secondName="Demetra" surname="Deckow" type="mother"/>
     </student>
-    <student firstName="Lane" secondName="Hand" surname="Bosco" sisters="1" brothers="4">
-        <parent firstName="Van" secondName="Zachariah" surname="Bosco" income="1150" type="father"/>
-        <parent firstName="Librada" secondName="Rasheeda" surname="Bosco" income="940" type="mother"/>
+    <student brothers="4" firstName="Lane" secondName="Hand" sisters="1" surname="Bosco">
+        <parent firstName="Van" income="1150" secondName="Zachariah" surname="Bosco" type="father"/>
+        <parent firstName="Librada" income="940" secondName="Rasheeda" surname="Bosco" type="mother"/>
     </student>
-    <student firstName="Dario" secondName="Weber" surname="Schoen" sisters="3" brothers="1">
-        <parent firstName="Chester" secondName="Antonio" surname="Schoen" income="789" type="father"/>
-        <parent firstName="Rebecca" secondName="Robbyn" surname="Schoen" income="1243" type="mother"/>
+    <student brothers="1" firstName="Dario" secondName="Weber" sisters="3" surname="Schoen">
+        <parent firstName="Chester" income="789" secondName="Antonio" surname="Schoen" type="father"/>
+        <parent firstName="Rebecca" income="1243" secondName="Robbyn" surname="Schoen" type="mother"/>
     </student>
-    <student firstName="Kasie" secondName="Fadel" surname="Reichert" sisters="2" brothers="3">
-        <parent firstName="Dion" secondName="Florentino" surname="Reichert" income="1786" type="father"/>
-        <parent firstName="Barbar" secondName="Dusty" surname="Reichert" income="2223" type="mother"/>
+    <student brothers="3" firstName="Kasie" secondName="Fadel" sisters="2" surname="Reichert">
+        <parent firstName="Dion" income="1786" secondName="Florentino" surname="Reichert" type="father"/>
+        <parent firstName="Barbar" income="2223" secondName="Dusty" surname="Reichert" type="mother"/>
     </student>
-    <student firstName="Kenyetta" secondName="Baumbach" surname="Abshire" sisters="4" brothers="1">
-        <parent firstName="Lauren" secondName="Antoine" surname="Abshire" income="1036" type="father"/>
-        <parent firstName="Karyn" secondName="Janene" surname="Abshire" income="564" type="mother"/>
+    <student brothers="1" firstName="Kenyetta" secondName="Baumbach" sisters="4" surname="Abshire">
+        <parent firstName="Lauren" income="1036" secondName="Antoine" surname="Abshire" type="father"/>
+        <parent firstName="Karyn" income="564" secondName="Janene" surname="Abshire" type="mother"/>
     </student>
-    <student firstName="Calvin" secondName="Treutel" surname="Fahey" sisters="1" brothers="1">
-        <parent firstName="Gene" secondName="Kirk" surname="Fahey" income="1363" type="father"/>
-        <parent firstName="Valeria" secondName="Rachell" surname="Fahey" income="1647" type="mother"/>
+    <student brothers="1" firstName="Calvin" secondName="Treutel" sisters="1" surname="Fahey">
+        <parent firstName="Gene" income="1363" secondName="Kirk" surname="Fahey" type="father"/>
+        <parent firstName="Valeria" income="1647" secondName="Rachell" surname="Fahey" type="mother"/>
     </student>
-    <student firstName="Elvia" secondName="Schowalter" surname="Mohr" sisters="1" brothers="5">
-        <parent firstName="Dane" secondName="Andy" surname="Mohr" income="2259" type="father"/>
-        <parent firstName="Cruz" secondName="Delilah" surname="Mohr" income="642" type="mother"/>
+    <student brothers="5" firstName="Elvia" secondName="Schowalter" sisters="1" surname="Mohr">
+        <parent firstName="Dane" income="2259" secondName="Andy" surname="Mohr" type="father"/>
+        <parent firstName="Cruz" income="642" secondName="Delilah" surname="Mohr" type="mother"/>
     </student>
-    <student firstName="Malik" secondName="Goyette" surname="Gottlieb" sisters="1" brothers="3">
-        <parent firstName="Vince" secondName="Carson" surname="Gottlieb" income="2167" type="father"/>
-        <parent firstName="Lois" secondName="Tisha" surname="Gottlieb" income="1485" type="mother"/>
+    <student brothers="3" firstName="Malik" secondName="Goyette" sisters="1" surname="Gottlieb">
+        <parent firstName="Vince" income="2167" secondName="Carson" surname="Gottlieb" type="father"/>
+        <parent firstName="Lois" income="1485" secondName="Tisha" surname="Gottlieb" type="mother"/>
     </student>
-    <student firstName="Francis" secondName="Kerluke" surname="Fritsch" sisters="1" brothers="0">
-        <parent firstName="Kenton" secondName="Steven" surname="Fritsch" income="1600" type="father"/>
-        <parent firstName="Daryl" secondName="Marlys" surname="Fritsch" income="1244" type="mother"/>
+    <student brothers="0" firstName="Francis" secondName="Kerluke" sisters="1" surname="Fritsch">
+        <parent firstName="Kenton" income="1600" secondName="Steven" surname="Fritsch" type="father"/>
+        <parent firstName="Daryl" income="1244" secondName="Marlys" surname="Fritsch" type="mother"/>
     </student>
-    <student firstName="Krystina" secondName="Mante" surname="Zulauf" sisters="4" brothers="1">
-        <parent firstName="Lawrence" secondName="Marcellus" surname="Zulauf" income="875" type="father"/>
-        <parent firstName="Olimpia" secondName="Sima" surname="Zulauf" income="818" type="mother"/>
+    <student brothers="1" firstName="Krystina" secondName="Mante" sisters="4" surname="Zulauf">
+        <parent firstName="Lawrence" income="875" secondName="Marcellus" surname="Zulauf" type="father"/>
+        <parent firstName="Olimpia" income="818" secondName="Sima" surname="Zulauf" type="mother"/>
     </student>
-    <student firstName="Michaele" secondName="Conn" surname="Skiles" sisters="0" brothers="4">
-        <parent firstName="Sebastian" secondName="Werner" surname="Skiles" income="1058" type="father"/>
-        <parent firstName="Marilyn" secondName="Corrina" surname="Skiles" income="2105" type="mother"/>
+    <student brothers="4" firstName="Michaele" secondName="Conn" sisters="0" surname="Skiles">
+        <parent firstName="Sebastian" income="1058" secondName="Werner" surname="Skiles" type="father"/>
+        <parent firstName="Marilyn" income="2105" secondName="Corrina" surname="Skiles" type="mother"/>
     </student>
-    <student firstName="Pat" secondName="Kshlerin" surname="Rutherford" sisters="3" brothers="0">
-        <parent firstName="Chang" secondName="Mauro" surname="Rutherford" income="2377" type="father"/>
-        <parent firstName="Leticia" secondName="Harriett" surname="Rutherford" income="717" type="mother"/>
+    <student brothers="0" firstName="Pat" secondName="Kshlerin" sisters="3" surname="Rutherford">
+        <parent firstName="Chang" income="2377" secondName="Mauro" surname="Rutherford" type="father"/>
+        <parent firstName="Leticia" income="717" secondName="Harriett" surname="Rutherford" type="mother"/>
     </student>
-    <student firstName="Pierre" secondName="Hyatt" surname="Friesen" sisters="5" brothers="2">
-        <parent firstName="Curt" secondName="Jamie" surname="Friesen" income="2238" type="father"/>
-        <parent firstName="Bryanna" secondName="Dee" surname="Friesen" income="1873" type="mother"/>
+    <student brothers="2" firstName="Pierre" secondName="Hyatt" sisters="5" surname="Friesen">
+        <parent firstName="Curt" income="2238" secondName="Jamie" surname="Friesen" type="father"/>
+        <parent firstName="Bryanna" income="1873" secondName="Dee" surname="Friesen" type="mother"/>
     </student>
-    <student firstName="Michelina" secondName="Shanahan" surname="Hills" sisters="2" brothers="5">
-        <parent firstName="Claude" secondName="Glen" surname="Hills" income="693" type="father"/>
-        <parent firstName="Joana" secondName="Jenine" surname="Hills" income="817" type="mother"/>
+    <student brothers="5" firstName="Michelina" secondName="Shanahan" sisters="2" surname="Hills">
+        <parent firstName="Claude" income="693" secondName="Glen" surname="Hills" type="father"/>
+        <parent firstName="Joana" income="817" secondName="Jenine" surname="Hills" type="mother"/>
     </student>
-    <student firstName="Esmeralda" secondName="Weissnat" surname="Wiza" sisters="1" brothers="5">
-        <parent firstName="Albert" secondName="Monty" surname="Wiza" income="1326" type="father"/>
-        <parent firstName="Sharen" secondName="Valene" surname="Wiza" income="1626" type="mother"/>
+    <student brothers="5" firstName="Esmeralda" secondName="Weissnat" sisters="1" surname="Wiza">
+        <parent firstName="Albert" income="1326" secondName="Monty" surname="Wiza" type="father"/>
+        <parent firstName="Sharen" income="1626" secondName="Valene" surname="Wiza" type="mother"/>
     </student>
-    <student firstName="Maisha" secondName="Ratke" surname="Anderson" sisters="4" brothers="5">
-        <parent firstName="Collin" secondName="Aldo" surname="Anderson" income="1820" type="father"/>
-        <parent firstName="Sade" secondName="Charissa" surname="Anderson" income="2372" type="mother"/>
+    <student brothers="5" firstName="Maisha" secondName="Ratke" sisters="4" surname="Anderson">
+        <parent firstName="Collin" income="1820" secondName="Aldo" surname="Anderson" type="father"/>
+        <parent firstName="Sade" income="2372" secondName="Charissa" surname="Anderson" type="mother"/>
     </student>
-    <student firstName="Marshall" secondName="Herman" surname="Tromp" sisters="1" brothers="0">
-        <parent firstName="Blaine" secondName="Guy" surname="Tromp" income="2142" type="father"/>
-        <parent firstName="Matha" secondName="Noma" surname="Tromp" income="1887" type="mother"/>
+    <student brothers="0" firstName="Marshall" secondName="Herman" sisters="1" surname="Tromp">
+        <parent firstName="Blaine" income="2142" secondName="Guy" surname="Tromp" type="father"/>
+        <parent firstName="Matha" income="1887" secondName="Noma" surname="Tromp" type="mother"/>
     </student>
-    <student firstName="Samatha" secondName="Bednar" surname="DuBuque" sisters="5" brothers="2">
-        <parent firstName="Pasquale" secondName="Bradford" surname="DuBuque" income="1522" type="father"/>
-        <parent firstName="Sun" secondName="Laveta" surname="DuBuque" income="1573" type="mother"/>
+    <student brothers="2" firstName="Samatha" secondName="Bednar" sisters="5" surname="DuBuque">
+        <parent firstName="Pasquale" income="1522" secondName="Bradford" surname="DuBuque" type="father"/>
+        <parent firstName="Sun" income="1573" secondName="Laveta" surname="DuBuque" type="mother"/>
     </student>
-    <student firstName="Andreas" secondName="Bartell" surname="Bruen" sisters="5" brothers="2">
-        <parent firstName="Austin" secondName="Max" surname="Bruen" income="1167" type="father"/>
-        <parent firstName="Carola" secondName="Shawnee" surname="Bruen" income="1024" type="mother"/>
+    <student brothers="2" firstName="Andreas" secondName="Bartell" sisters="5" surname="Bruen">
+        <parent firstName="Austin" income="1167" secondName="Max" surname="Bruen" type="father"/>
+        <parent firstName="Carola" income="1024" secondName="Shawnee" surname="Bruen" type="mother"/>
     </student>
-    <student firstName="Sophia" secondName="Klocko" surname="Flatley" sisters="0" brothers="3">
-        <parent firstName="Toby" secondName="Hubert" surname="Flatley" income="2174" type="father"/>
-        <parent firstName="Yolande" secondName="Maybell" surname="Flatley" income="771" type="mother"/>
+    <student brothers="3" firstName="Sophia" secondName="Klocko" sisters="0" surname="Flatley">
+        <parent firstName="Toby" income="2174" secondName="Hubert" surname="Flatley" type="father"/>
+        <parent firstName="Yolande" income="771" secondName="Maybell" surname="Flatley" type="mother"/>
     </student>
-    <student firstName="Amos" secondName="Hodkiewicz" surname="Torphy" sisters="3" brothers="2">
-        <parent firstName="Aubrey" secondName="Parker" surname="Torphy" income="2079" type="father"/>
-        <parent firstName="Vannesa" secondName="Bernetta" surname="Torphy" income="1336" type="mother"/>
+    <student brothers="2" firstName="Amos" secondName="Hodkiewicz" sisters="3" surname="Torphy">
+        <parent firstName="Aubrey" income="2079" secondName="Parker" surname="Torphy" type="father"/>
+        <parent firstName="Vannesa" income="1336" secondName="Bernetta" surname="Torphy" type="mother"/>
     </student>
-    <student firstName="Ahmad" secondName="Effertz" surname="Johns" sisters="0" brothers="4">
-        <parent firstName="Marquis" secondName="Kelvin" surname="Johns" income="2253" type="father"/>
-        <parent firstName="Alleen" secondName="Susanna" surname="Johns" income="1011" type="mother"/>
+    <student brothers="4" firstName="Ahmad" secondName="Effertz" sisters="0" surname="Johns">
+        <parent firstName="Marquis" income="2253" secondName="Kelvin" surname="Johns" type="father"/>
+        <parent firstName="Alleen" income="1011" secondName="Susanna" surname="Johns" type="mother"/>
     </student>
-    <student firstName="Almeda" secondName="Howe" surname="Veum" sisters="0" brothers="5">
-        <parent firstName="Jules" secondName="Derick" surname="Veum" income="1199" type="father"/>
-        <parent firstName="Fae" secondName="Filomena" surname="Veum" income="2005" type="mother"/>
+    <student brothers="5" firstName="Almeda" secondName="Howe" sisters="0" surname="Veum">
+        <parent firstName="Jules" income="1199" secondName="Derick" surname="Veum" type="father"/>
+        <parent firstName="Fae" income="2005" secondName="Filomena" surname="Veum" type="mother"/>
     </student>
-    <student firstName="Dane" secondName="Nitzsche" surname="Rau" sisters="1" brothers="0">
-        <parent firstName="Rueben" secondName="Darron" surname="Rau" income="1153" type="father"/>
-        <parent firstName="Kiera" secondName="Maybelle" surname="Rau" income="1092" type="mother"/>
+    <student brothers="0" firstName="Dane" secondName="Nitzsche" sisters="1" surname="Rau">
+        <parent firstName="Rueben" income="1153" secondName="Darron" surname="Rau" type="father"/>
+        <parent firstName="Kiera" income="1092" secondName="Maybelle" surname="Rau" type="mother"/>
     </student>
-    <student firstName="Mickey" secondName="Erdman" surname="Abbott" sisters="3" brothers="4">
-        <parent firstName="Leonel" secondName="Patrick" surname="Abbott" income="652" type="father"/>
-        <parent firstName="Danae" secondName="Nena" surname="Abbott" income="1254" type="mother"/>
+    <student brothers="4" firstName="Mickey" secondName="Erdman" sisters="3" surname="Abbott">
+        <parent firstName="Leonel" income="652" secondName="Patrick" surname="Abbott" type="father"/>
+        <parent firstName="Danae" income="1254" secondName="Nena" surname="Abbott" type="mother"/>
     </student>
-    <student firstName="Hans" secondName="Reichel" surname="Grant" sisters="4" brothers="4">
-        <parent firstName="Hank" secondName="Wilson" surname="Grant" income="2332" type="father"/>
-        <parent firstName="Katharine" secondName="Coreen" surname="Grant" income="973" type="mother"/>
+    <student brothers="4" firstName="Hans" secondName="Reichel" sisters="4" surname="Grant">
+        <parent firstName="Hank" income="2332" secondName="Wilson" surname="Grant" type="father"/>
+        <parent firstName="Katharine" income="973" secondName="Coreen" surname="Grant" type="mother"/>
     </student>
-    <student firstName="Deandre" secondName="Schroeder" surname="McGlynn" sisters="0" brothers="1">
-        <parent firstName="Reid" secondName="Tristan" surname="McGlynn" income="1392" type="father"/>
-        <parent firstName="Laquanda" secondName="Arlean" surname="McGlynn" income="2247" type="mother"/>
+    <student brothers="1" firstName="Deandre" secondName="Schroeder" sisters="0" surname="McGlynn">
+        <parent firstName="Reid" income="1392" secondName="Tristan" surname="McGlynn" type="father"/>
+        <parent firstName="Laquanda" income="2247" secondName="Arlean" surname="McGlynn" type="mother"/>
     </student>
-    <student firstName="Bobbye" secondName="Hilll" surname="Kuphal" sisters="3" brothers="4">
-        <parent firstName="Joesph" secondName="Emerson" surname="Kuphal" income="545" type="father"/>
-        <parent firstName="Alvina" secondName="Damaris" surname="Kuphal" income="2150" type="mother"/>
+    <student brothers="4" firstName="Bobbye" secondName="Hilll" sisters="3" surname="Kuphal">
+        <parent firstName="Joesph" income="545" secondName="Emerson" surname="Kuphal" type="father"/>
+        <parent firstName="Alvina" income="2150" secondName="Damaris" surname="Kuphal" type="mother"/>
     </student>
-    <student firstName="Lynetta" secondName="Lubowitz" surname="Stokes" sisters="4" brothers="2">
-        <parent firstName="Rich" secondName="Emmett" surname="Stokes" income="606" type="father"/>
-        <parent firstName="Luetta" secondName="Gwendolyn" surname="Stokes" income="2167" type="mother"/>
+    <student brothers="2" firstName="Lynetta" secondName="Lubowitz" sisters="4" surname="Stokes">
+        <parent firstName="Rich" income="606" secondName="Emmett" surname="Stokes" type="father"/>
+        <parent firstName="Luetta" income="2167" secondName="Gwendolyn" surname="Stokes" type="mother"/>
     </student>
-    <student firstName="Korey" secondName="Brown" surname="Wilderman" sisters="1" brothers="4">
-        <parent firstName="Roderick" secondName="Jerry" surname="Wilderman" income="1915" type="father"/>
-        <parent firstName="Minerva" secondName="Trudy" surname="Wilderman" income="979" type="mother"/>
+    <student brothers="4" firstName="Korey" secondName="Brown" sisters="1" surname="Wilderman">
+        <parent firstName="Roderick" income="1915" secondName="Jerry" surname="Wilderman" type="father"/>
+        <parent firstName="Minerva" income="979" secondName="Trudy" surname="Wilderman" type="mother"/>
     </student>
-    <student firstName="Samuel" secondName="Satterfield" surname="Hegmann" sisters="4" brothers="0">
-        <parent firstName="Hobert" secondName="Gale" surname="Hegmann" income="1080" type="father"/>
-        <parent firstName="Trish" secondName="Lavonda" surname="Hegmann" income="1460" type="mother"/>
+    <student brothers="0" firstName="Samuel" secondName="Satterfield" sisters="4" surname="Hegmann">
+        <parent firstName="Hobert" income="1080" secondName="Gale" surname="Hegmann" type="father"/>
+        <parent firstName="Trish" income="1460" secondName="Lavonda" surname="Hegmann" type="mother"/>
     </student>
-    <student firstName="Rudy" secondName="Gerlach" surname="Osinski" sisters="4" brothers="4">
-        <parent firstName="Moshe" secondName="Abel" surname="Osinski" income="1211" type="father"/>
-        <parent firstName="Makeda" secondName="Libby" surname="Osinski" income="2458" type="mother"/>
+    <student brothers="4" firstName="Rudy" secondName="Gerlach" sisters="4" surname="Osinski">
+        <parent firstName="Moshe" income="1211" secondName="Abel" surname="Osinski" type="father"/>
+        <parent firstName="Makeda" income="2458" secondName="Libby" surname="Osinski" type="mother"/>
     </student>
-    <student firstName="Catalina" secondName="Monahan" surname="Rath" sisters="0" brothers="5">
-        <parent firstName="Sammy" secondName="Jame" surname="Rath" income="2496" type="father"/>
-        <parent firstName="Valentine" secondName="Camilla" surname="Rath" income="844" type="mother"/>
+    <student brothers="5" firstName="Catalina" secondName="Monahan" sisters="0" surname="Rath">
+        <parent firstName="Sammy" income="2496" secondName="Jame" surname="Rath" type="father"/>
+        <parent firstName="Valentine" income="844" secondName="Camilla" surname="Rath" type="mother"/>
     </student>
 </students>
