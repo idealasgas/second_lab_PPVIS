@@ -67,7 +67,7 @@ public class Paginator {
 
         last.setOnAction(event -> {
             table.setItems(getPage(pages.size() - 1));
-            currentPageLabel.setText(Integer.toString(currentPage + 1));
+            currentPageLabel.setText(Integer.toString(pages.size()));
         });
 
         VBox container = new VBox();

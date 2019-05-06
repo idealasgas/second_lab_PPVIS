@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a300e53-d8a1-4ff8-8a29-c53e58afa54f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/second_lab_ppvis/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/second_lab_ppvis/MainWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/second_lab_ppvis/SAXExample$XMLHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/second_lab_ppvis/SAXExample$XMLHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/second_lab_ppvis/StudentsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/second_lab_ppvis/StudentsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/xml_file1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resource/xml_file1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SAXExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAXExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StudentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudentsController.java" afterDir="false" />
-    </list>
+    <list default="true" id="5a300e53-d8a1-4ff8-8a29-c53e58afa54f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +230,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557090311321" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557090480023" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../javafx" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -294,12 +285,12 @@
       <workItem from="1555042216974" duration="11055000" />
       <workItem from="1555611062725" duration="10402000" />
       <workItem from="1555851120375" duration="5788000" />
-      <workItem from="1557074138664" duration="5534000" />
+      <workItem from="1557074138664" duration="5650000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57062000" />
+    <option name="totallyTimeSpent" value="57178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
