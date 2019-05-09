@@ -1,6 +1,8 @@
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -10,18 +12,24 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainWindow extends Application {
     public static void main(String[] args) {
         launch(args);
     }
     private MainModel model;
+    private StudentsController studentsController;
+    private Paginator paginator;
 
 
     public void start(Stage primaryStage) throws ParserConfigurationException, SAXException, IOException {
@@ -33,18 +41,19 @@ public class MainWindow extends Application {
         Button search = new Button("Search");
 
 
-        ArrayList<Student> studentArrayList = new SAXExample().getStudents();
-        model = new MainModel(studentArrayList);
-        Paginator paginator = new Paginator(model.getStudentArrayList());
-        StudentsController studentsController = new StudentsController(model, paginator);
+//        ArrayList<Student> studentArrayList = new SAXExample().getStudents();
+//        model = new MainModel(studentArrayList);
+//        Paginator paginator = new Paginator(model.getStudentArrayList());
+//        StudentsController studentsController = new StudentsController(model, paginator);
 
 
         add.setOnAction(event -> onAddButton(studentsController));
         search.setOnAction(event -> onSearchButton(studentsController));
         remove.setOnAction(event -> onDeleteButton(studentsController));
+        final FileChooser fileChooser = new FileChooser();
 
         toolBar.getItems().addAll(add, remove, search);
-        VBox vBox = new VBox(toolBar, paginator.getView());
+        VBox vBox = new VBox(toolBar);
 
         MenuBar menuBar = new MenuBar();
 
@@ -52,7 +61,30 @@ public class MainWindow extends Application {
         Menu menuFile = new Menu("File");
 
         MenuItem downloadMenu = new MenuItem("Download XML");
+//        downloadMenu.setOnAction();
         MenuItem uploadMenu = new MenuItem("Upload XML");
+        uploadMenu.setOnAction(event -> {
+            File file = fileChooser.showOpenDialog(primaryStage);
+            if (file != null) {
+//                System.out.println(file.getAbsolutePath());
+//                ArrayList<Student> studentArrayList = new SAXExample().getStudents(file);
+//                model = new MainModel(studentArrayList);
+//                paginator = new Paginator(model.getStudentArrayList());
+//                studentsController = new StudentsController(model, paginator);
+                try {
+                    onDownload(file);
+                    vBox.getChildren().add(paginator.getView());
+
+                } catch (ParserConfigurationException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (SAXException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        });
 
         menuFile.getItems().addAll(uploadMenu, downloadMenu);
 
@@ -85,5 +117,13 @@ public class MainWindow extends Application {
 
     private void onDeleteButton(StudentsController controller) {
         new DeleteView(controller).getDialog().showAndWait();
+    }
+
+    private void onDownload(File file) throws ParserConfigurationException, SAXException, IOException {
+        System.out.println(file.getAbsolutePath());
+        ArrayList<Student> studentArrayList = new SAXExample().getStudents(file);
+        model = new MainModel(studentArrayList);
+        paginator = new Paginator(model.getStudentArrayList());
+        studentsController = new StudentsController(model, paginator);
     }
 }

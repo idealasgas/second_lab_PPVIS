@@ -7,18 +7,19 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class SAXExample {
     private static ArrayList<Student> students = new ArrayList<>();
     private static Student student;
 
-    public ArrayList getStudents() throws ParserConfigurationException, SAXException, IOException {
+    public ArrayList getStudents(File file) throws ParserConfigurationException, SAXException, IOException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
 
         XMLHandler handler = new XMLHandler();
-        parser.parse(new File("resource/xml_file1.xml"), handler);
+        parser.parse(file, handler);
 
 //        for (Student student : students)
 //            System.out.println(String.format("Имя студента: %s,  его мамочки: %s,  его папочки: %s, кол-во сестер: %d", student.getName(), student.getMother().getName(), student.getFather().getName(), student.getSisters()));
