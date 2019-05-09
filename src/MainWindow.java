@@ -60,19 +60,21 @@ public class MainWindow extends Application {
         Menu menuActions = new Menu("Actions");
         Menu menuFile = new Menu("File");
 
-        MenuItem downloadMenu = new MenuItem("Download XML");
-//        downloadMenu.setOnAction();
-        MenuItem uploadMenu = new MenuItem("Upload XML");
+        MenuItem downloadMenu = new MenuItem("Save");
+        downloadMenu.setOnAction(event -> {
+            File file = fileChooser.showOpenDialog(primaryStage);
+            new DOMExample().createNewFile(file, model.getStudentArrayList());
+        });
+
+        MenuItem uploadMenu = new MenuItem("Open");
         uploadMenu.setOnAction(event -> {
             File file = fileChooser.showOpenDialog(primaryStage);
             if (file != null) {
-//                System.out.println(file.getAbsolutePath());
-//                ArrayList<Student> studentArrayList = new SAXExample().getStudents(file);
-//                model = new MainModel(studentArrayList);
-//                paginator = new Paginator(model.getStudentArrayList());
-//                studentsController = new StudentsController(model, paginator);
                 try {
-                    onDownload(file);
+                    ArrayList<Student> studentArrayList = new SAXExample().getStudents(file);
+                    model = new MainModel(studentArrayList);
+                    paginator = new Paginator(model.getStudentArrayList());
+                    studentsController = new StudentsController(model, paginator);
                     vBox.getChildren().add(paginator.getView());
 
                 } catch (ParserConfigurationException e) {
@@ -117,13 +119,5 @@ public class MainWindow extends Application {
 
     private void onDeleteButton(StudentsController controller) {
         new DeleteView(controller).getDialog().showAndWait();
-    }
-
-    private void onDownload(File file) throws ParserConfigurationException, SAXException, IOException {
-        System.out.println(file.getAbsolutePath());
-        ArrayList<Student> studentArrayList = new SAXExample().getStudents(file);
-        model = new MainModel(studentArrayList);
-        paginator = new Paginator(model.getStudentArrayList());
-        studentsController = new StudentsController(model, paginator);
     }
 }
