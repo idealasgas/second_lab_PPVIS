@@ -1,10 +1,13 @@
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
@@ -15,6 +18,7 @@ public class Paginator {
     private int currentPage;
     private int recordsOnPage;
     private Label currentPageLabel;
+    private Label totalRecordsLabel;
     private ArrayList<Student> studentArrayList;;
 
     public Paginator(ArrayList<Student> arrayListOfStudents) {
@@ -33,6 +37,7 @@ public class Paginator {
         Button first = new Button("first");
         Button last = new Button("last");
         currentPageLabel = new Label("1/" + (pages.size()));
+        totalRecordsLabel = new Label(Integer.toString(studentArrayList.size()));
         TextField recordsOnPage = new TextField();
         Button setRecordsOnPageButton = new Button("set");
         Label recordsOnPageLabel = new Label("records on page:");
@@ -46,6 +51,47 @@ public class Paginator {
         grid.add(recordsOnPageLabel, 6, 0);
         grid.add(recordsOnPage, 7, 0);
         grid.add(setRecordsOnPageButton, 8,  0);
+        grid.add(totalRecordsLabel, 9, 0);
+//        grid.setGridLinesVisible(true);
+
+        setButton(first);
+        setButton(previous);
+        setButton(next);
+        setButton(last);
+        setButton(setRecordsOnPageButton);
+
+        recordsOnPage.setMaxWidth(Double.MAX_VALUE);
+        recordsOnPage.setMaxHeight(Double.MAX_VALUE);
+        GridPane.setHgrow(recordsOnPage, Priority.ALWAYS);
+        GridPane.setVgrow(recordsOnPage, Priority.ALWAYS);
+        GridPane.setMargin(recordsOnPage, new Insets(10, 0, 10, 60));
+
+
+
+        ColumnConstraints column1 = new ColumnConstraints();
+        ColumnConstraints column2 = new ColumnConstraints();
+        ColumnConstraints column3 = new ColumnConstraints();
+        ColumnConstraints column4 = new ColumnConstraints();
+        ColumnConstraints column5 = new ColumnConstraints();
+        ColumnConstraints column6 = new ColumnConstraints();
+        ColumnConstraints column7 = new ColumnConstraints();
+        ColumnConstraints column8 = new ColumnConstraints();
+        ColumnConstraints column9 = new ColumnConstraints();
+
+        column1.setPercentWidth(10);
+        column2.setPercentWidth(10);
+        column3.setPercentWidth(3);
+        column4.setPercentWidth(10);
+        column5.setPercentWidth(10);
+        column6.setPercentWidth(10);
+        column7.setPercentWidth(10);
+        column8.setPercentWidth(10);
+        column9.setPercentWidth(10);
+
+        grid.getColumnConstraints().addAll(column1, column2, column3, column4, column5, column6, column7, column8, column9);
+
+
+        grid.getColumnConstraints().add(new ColumnConstraints(80));
 
         setRecordsOnPageButton.setOnAction(event -> {
 //            if (model == null) {
@@ -122,5 +168,13 @@ public class Paginator {
         currentPage = 0;
         table.setItems(FXCollections.observableArrayList(pages.get(0)));
         currentPageLabel.setText("1/" + pages.size());
+    }
+
+    private void setButton(Button button) {
+        button.setMaxWidth(Double.MAX_VALUE);
+        button.setMaxHeight(Double.MAX_VALUE);
+        GridPane.setHgrow(button, Priority.ALWAYS);
+        GridPane.setVgrow(button, Priority.ALWAYS);
+        GridPane.setMargin(button, new Insets(10));
     }
 }

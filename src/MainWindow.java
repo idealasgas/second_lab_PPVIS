@@ -27,12 +27,6 @@ public class MainWindow extends Application {
     public void start(Stage primaryStage) throws ParserConfigurationException, SAXException, IOException {
         primaryStage.setTitle("лабораторная 2");
 
-        Scene scene = new Scene(getView(), 680, 650);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-    public VBox getView() throws ParserConfigurationException, SAXException, IOException {
         ToolBar toolBar = new ToolBar();
         Button add = new Button("Add");
         Button remove = new Button("Remove");
@@ -41,7 +35,7 @@ public class MainWindow extends Application {
 
         ArrayList<Student> studentArrayList = new SAXExample().getStudents();
         model = new MainModel(studentArrayList);
-        Paginator paginator = new Paginator(model.studentArrayList);
+        Paginator paginator = new Paginator(model.getStudentArrayList());
         StudentsController studentsController = new StudentsController(model, paginator);
 
 
@@ -52,7 +46,33 @@ public class MainWindow extends Application {
         toolBar.getItems().addAll(add, remove, search);
         VBox vBox = new VBox(toolBar, paginator.getView());
 
-        return vBox;
+        MenuBar menuBar = new MenuBar();
+
+        Menu menuActions = new Menu("Actions");
+        Menu menuFile = new Menu("File");
+
+        MenuItem downloadMenu = new MenuItem("Download XML");
+        MenuItem uploadMenu = new MenuItem("Upload XML");
+
+        menuFile.getItems().addAll(uploadMenu, downloadMenu);
+
+        MenuItem addMenu = new MenuItem("Add student");
+        addMenu.setOnAction(event -> onAddButton(studentsController));
+        MenuItem searchMenu = new MenuItem("Search for a student");
+        searchMenu.setOnAction(event -> onSearchButton(studentsController));
+        MenuItem removeMenu = new MenuItem("Remove a student");
+        removeMenu.setOnAction(event -> onDeleteButton(studentsController));
+
+        menuActions.getItems().addAll(addMenu, searchMenu, removeMenu);
+
+        menuBar.getMenus().addAll(menuFile, menuActions);
+
+        Scene scene = new Scene(vBox, 1120, 700);
+
+        ((VBox) scene.getRoot()).getChildren().add(0, menuBar);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     private void onAddButton(StudentsController controller) {
