@@ -119,6 +119,7 @@ public class StudentsController {
 
         model.students.add(newStudent);
         model.studentArrayList.add(newStudent);
+        paginator.refreshPages(model.studentArrayList);
 
         DOMExample dom = new DOMExample();
         dom.addRecord(name, secondName, surname, mothersName, mothersSecondName, mothersSurname,
