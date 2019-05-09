@@ -45,9 +45,9 @@ public class MainWindow extends Application {
         StudentsController studentsController = new StudentsController(model, paginator);
 
 
-        add.setOnAction(event -> onAddButton(studentsController, paginator));
-        search.setOnAction(event -> onSearchButton(studentsController, paginator));
-        remove.setOnAction(event -> onDeleteButton(studentsController, paginator));
+        add.setOnAction(event -> onAddButton(studentsController));
+        search.setOnAction(event -> onSearchButton(studentsController));
+        remove.setOnAction(event -> onDeleteButton(studentsController));
 
         toolBar.getItems().addAll(add, remove, search);
         VBox vBox = new VBox(toolBar, paginator.getView());
@@ -55,15 +55,15 @@ public class MainWindow extends Application {
         return vBox;
     }
 
-    private void onAddButton(StudentsController controller, Paginator paginator) {
-        new AddView(controller, paginator).getDialog().showAndWait();
+    private void onAddButton(StudentsController controller) {
+        new AddView(controller).getDialog().showAndWait();
     }
 
-    private void onSearchButton(StudentsController controller, Paginator paginator){
-        new SearchView(controller, paginator).getDialog().showAndWait();
+    private void onSearchButton(StudentsController controller){
+        new SearchView(controller).getDialog().showAndWait();
     }
 
-    private void onDeleteButton(StudentsController controller, Paginator paginator) {
-        new DeleteView(controller, paginator).getDialog().showAndWait();
+    private void onDeleteButton(StudentsController controller) {
+        new DeleteView(controller).getDialog().showAndWait();
     }
 }

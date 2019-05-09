@@ -15,11 +15,10 @@ public class SearchView {
     private VBox box;
     private Dialog searchDialog;
     private StudentsController controller;
-    private Paginator paginator;
+//    private Paginator paginator;
 
-    SearchView(StudentsController controller, Paginator paginator) {
+    SearchView(StudentsController controller) {
         this.controller = controller;
-        this.paginator = paginator;
     }
 
     public Dialog getDialog() {
@@ -181,7 +180,7 @@ public class SearchView {
             Text message = new Text("Nothing found.");
             box.getChildren().add(message);
         } else {
-            paginator = new Paginator(studentArrayList);
+            Paginator paginator = new Paginator(studentArrayList);
             box.getChildren().add(paginator.getView());
         }
     }

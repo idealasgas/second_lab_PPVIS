@@ -4,11 +4,9 @@ import javafx.scene.layout.GridPane;
 
 public class AddView {
     private StudentsController controller;
-    private Paginator paginator;
 
-    public AddView(StudentsController controller, Paginator paginator) {
+    public AddView(StudentsController controller) {
         this.controller = controller;
-        this.paginator = paginator;
     }
 
     public Dialog getDialog() {

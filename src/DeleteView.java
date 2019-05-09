@@ -14,11 +14,9 @@ public class DeleteView {
     private Dialog deleteDialog;
     private StudentsController controller;
     private ArrayList<Student> students;
-    private Paginator paginator;
 
-    DeleteView(StudentsController controller, Paginator paginator) {
+    DeleteView(StudentsController controller) {
         this.controller = controller;
-        this.paginator = paginator;
     }
 
     public Dialog getDialog() {
