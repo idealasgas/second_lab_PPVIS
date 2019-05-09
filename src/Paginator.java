@@ -93,13 +93,7 @@ public class Paginator {
 
         grid.getColumnConstraints().add(new ColumnConstraints(80));
 
-        setRecordsOnPageButton.setOnAction(event -> {
-//            if (model == null) {
-                refreshPagesOnSearch(Integer.parseInt(recordsOnPage.getText()));
-//            } else {
-//                refreshPages(Integer.parseInt(recordsOnPage.getText()));
-//            }
-        });
+        setRecordsOnPageButton.setOnAction(event -> refreshPages(Integer.parseInt(recordsOnPage.getText())));
 
         first.setOnAction(event -> {
             table.setItems(getPage(0));
@@ -143,12 +137,12 @@ public class Paginator {
         return page;
     }
 
-    public void refreshPagesOnSearch(int recordsOnPage) {
+    public void refreshPages(int recordsOnPage) {
         this.recordsOnPage = recordsOnPage;
-        refreshPagesOnSearch();
+        refreshPages();
     }
 
-    public void refreshPagesOnSearch() {
+    public void refreshPages() {
         pages.clear();
         for (int i = 0; i < studentArrayList.size(); i += recordsOnPage) {
             pages.add(new ArrayList<>(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage))));
@@ -156,18 +150,13 @@ public class Paginator {
         currentPage = 0;
         table.setItems(FXCollections.observableArrayList(pages.get(0)));
         currentPageLabel.setText("1/" + pages.size());
+        totalRecordsLabel.setText(Integer.toString(studentArrayList.size()));
     }
 
     public void refreshPages(ArrayList<Student> studentArrayList) {
         this.studentArrayList = studentArrayList;
         recordsOnPage = 10;
-        pages.clear();
-        for (int i = 0; i < studentArrayList.size(); i += recordsOnPage) {
-            pages.add(new ArrayList<>(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage))));
-        }
-        currentPage = 0;
-        table.setItems(FXCollections.observableArrayList(pages.get(0)));
-        currentPageLabel.setText("1/" + pages.size());
+        refreshPages();
     }
 
     private void setButton(Button button) {
