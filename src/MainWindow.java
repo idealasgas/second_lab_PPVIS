@@ -42,8 +42,8 @@ public class MainWindow extends Application {
         ArrayList<Student> studentArrayList = new SAXExample().getStudents();
         ObservableList<Student> students = FXCollections.observableArrayList(studentArrayList);
         model = new MainModel(studentArrayList, students);
-        StudentsController studentsController = new StudentsController(model);
-        Paginator paginator = new Paginator(model);
+        Paginator paginator = new Paginator(model.studentArrayList);
+        StudentsController studentsController = new StudentsController(model, paginator);
 
 
         add.setOnAction(event -> onAddButton(studentsController, paginator));

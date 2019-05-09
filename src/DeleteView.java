@@ -209,7 +209,7 @@ public class DeleteView {
             alert.setContentText("Nothing found");
         } else {
             alert.setContentText(students.size() + " students have been deleted just now.");
-            paginator.refreshPages();
+//            paginator.refreshPages();
         }
 
         alert.showAndWait();

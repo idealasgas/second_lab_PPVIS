@@ -4,16 +4,18 @@ import java.util.stream.Collectors;
 
 public class StudentsController {
     private MainModel model;
+    private Paginator paginator;
 
-    public StudentsController(MainModel model) {
+    public StudentsController(MainModel model, Paginator paginator) {
         this.model = model;
+        this.paginator = paginator;
     }
 
     public ArrayList<Student> deleteByName(String name, String secondName, String surname) {
         ArrayList<Student> filteredStudents = searchByStudentName(name, secondName, surname);
         model.students.removeAll(filteredStudents);
         model.studentArrayList.removeAll(filteredStudents);
-
+        paginator.refreshPages(model.studentArrayList);
         return filteredStudents;
     }
 
@@ -21,6 +23,7 @@ public class StudentsController {
         ArrayList<Student> filteredStudents = searchByParentsName(type, name, secondName, surname);
         model.students.removeAll(filteredStudents);
         model.studentArrayList.removeAll(filteredStudents);
+        paginator.refreshPages(model.studentArrayList);
         return filteredStudents;
     }
 
@@ -28,6 +31,7 @@ public class StudentsController {
         ArrayList<Student> filteredStudents = searchByNumberOfSiblings(type, number);
         model.students.removeAll(filteredStudents);
         model.studentArrayList.removeAll(filteredStudents);
+        paginator.refreshPages(model.studentArrayList);
         return filteredStudents;
     }
 
@@ -35,6 +39,8 @@ public class StudentsController {
         ArrayList<Student> filteredStudents = searchByParentsIncome(parent, lowerBound, higherBound);
         model.students.removeAll(filteredStudents);
         model.studentArrayList.removeAll(filteredStudents);
+        paginator.refreshPages(model.studentArrayList);
+
         return filteredStudents;
     }
 

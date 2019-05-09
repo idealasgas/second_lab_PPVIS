@@ -101,7 +101,6 @@ public class AddView {
                         fathersFirstName.getText(), mothersFirstName.getText(), fathersSecondName.getText(),
                         mothersSecondName.getText(), fathersSurname.getText(), mothersSurname.getText());
             }
-            paginator.refreshPages();
             return null;
         });
 

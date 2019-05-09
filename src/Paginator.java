@@ -10,22 +10,12 @@ import javafx.scene.layout.VBox;
 import java.util.ArrayList;
 
 public class Paginator {
-    private MainModel model;
     private ArrayList<ArrayList<Student>> pages = new ArrayList<>();
     private TableView<Student> table;
     private int currentPage;
     private int recordsOnPage;
     private Label currentPageLabel;
     private ArrayList<Student> studentArrayList;;
-
-    public Paginator(MainModel model) {
-        this.model = model;
-        this.recordsOnPage = 10;
-        for (int i = 0; i < model.studentArrayList.size(); i += recordsOnPage) {
-            pages.add(new ArrayList<>(model.studentArrayList.subList(i, Math.min(model.studentArrayList.size(), i + 10))));
-        }
-        this.currentPage = 0;
-    }
 
     public Paginator(ArrayList<Student> arrayListOfStudents) {
         this.studentArrayList = arrayListOfStudents;
@@ -58,11 +48,11 @@ public class Paginator {
         grid.add(setRecordsOnPageButton, 8,  0);
 
         setRecordsOnPageButton.setOnAction(event -> {
-            if (model == null) {
+//            if (model == null) {
                 refreshPagesOnSearch(Integer.parseInt(recordsOnPage.getText()));
-            } else {
-                refreshPages(Integer.parseInt(recordsOnPage.getText()));
-            }
+//            } else {
+//                refreshPages(Integer.parseInt(recordsOnPage.getText()));
+//            }
         });
 
         first.setOnAction(event -> {
@@ -107,27 +97,24 @@ public class Paginator {
         return page;
     }
 
-    public void refreshPages(int recordsOnPage) {
-        this.recordsOnPage = recordsOnPage;
-        refreshPages();
-    }
-
-    public void refreshPages() {
-        pages.clear();
-        for (int i = 0; i < model.studentArrayList.size(); i += recordsOnPage) {
-            pages.add(new ArrayList<>(model.studentArrayList.subList(i, Math.min(model.studentArrayList.size(), i + recordsOnPage))));
-        }
-        currentPage = 0;
-        table.setItems(FXCollections.observableArrayList(pages.get(0)));
-        currentPageLabel.setText("1/" + pages.size());
-    }
-
     public void refreshPagesOnSearch(int recordsOnPage) {
         this.recordsOnPage = recordsOnPage;
         refreshPagesOnSearch();
     }
 
     public void refreshPagesOnSearch() {
+        pages.clear();
+        for (int i = 0; i < studentArrayList.size(); i += recordsOnPage) {
+            pages.add(new ArrayList<>(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage))));
+        }
+        currentPage = 0;
+        table.setItems(FXCollections.observableArrayList(pages.get(0)));
+        currentPageLabel.setText("1/" + pages.size());
+    }
+
+    public void refreshPages(ArrayList<Student> studentArrayList) {
+        this.studentArrayList = studentArrayList;
+        recordsOnPage = 10;
         pages.clear();
         for (int i = 0; i < studentArrayList.size(); i += recordsOnPage) {
             pages.add(new ArrayList<>(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage))));
