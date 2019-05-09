@@ -93,6 +93,7 @@ public class Paginator {
 
         last.setOnAction(event -> {
             table.setItems(getPage(pages.size() - 1));
+            currentPage = pages.size() - 1;
             currentPageLabel.setText((pages.size()) + "/" + pages.size());
         });
 
