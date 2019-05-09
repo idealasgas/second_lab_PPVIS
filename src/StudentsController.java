@@ -13,7 +13,6 @@ public class StudentsController {
 
     public ArrayList<Student> deleteByName(String name, String secondName, String surname) {
         ArrayList<Student> filteredStudents = searchByStudentName(name, secondName, surname);
-        model.students.removeAll(filteredStudents);
         model.studentArrayList.removeAll(filteredStudents);
         paginator.refreshPages(model.studentArrayList);
         return filteredStudents;
@@ -21,7 +20,6 @@ public class StudentsController {
 
     public ArrayList<Student> deleteByParentsName(String type, String name, String secondName, String surname){
         ArrayList<Student> filteredStudents = searchByParentsName(type, name, secondName, surname);
-        model.students.removeAll(filteredStudents);
         model.studentArrayList.removeAll(filteredStudents);
         paginator.refreshPages(model.studentArrayList);
         return filteredStudents;
@@ -29,7 +27,6 @@ public class StudentsController {
 
     public ArrayList<Student> deleteByNumberOfSiblings(String type, String number){
         ArrayList<Student> filteredStudents = searchByNumberOfSiblings(type, number);
-        model.students.removeAll(filteredStudents);
         model.studentArrayList.removeAll(filteredStudents);
         paginator.refreshPages(model.studentArrayList);
         return filteredStudents;
@@ -37,7 +34,6 @@ public class StudentsController {
 
     public ArrayList<Student> deleteByParentsIncome(String parent, String lowerBound, String higherBound) {
         ArrayList<Student> filteredStudents = searchByParentsIncome(parent, lowerBound, higherBound);
-        model.students.removeAll(filteredStudents);
         model.studentArrayList.removeAll(filteredStudents);
         paginator.refreshPages(model.studentArrayList);
 
@@ -45,7 +41,7 @@ public class StudentsController {
     }
 
     public ArrayList<Student> searchByStudentName(String name, String secondName, String surname) {
-        List list = model.students.stream().filter(student ->
+        List list = model.studentArrayList.stream().filter(student ->
                 ((equal(name, student.getFirstName())) && (equal(secondName, student.getSecondName()))
                         && (equal(surname, student.getSurname())))).collect(Collectors.toList());
 
@@ -57,10 +53,10 @@ public class StudentsController {
     public ArrayList<Student> searchByParentsName(String type, String name, String secondName, String surname) {
         List list;
         if (type == "mother") {
-            list = model.students.stream().filter(student -> (equal(name, student.getMother().getFirstName())) &&
+            list = model.studentArrayList.stream().filter(student -> (equal(name, student.getMother().getFirstName())) &&
                     (equal(secondName, student.getMother().getSecondName())) && (equal(surname, student.getMother().getSurname()))).collect(Collectors.toList());
         } else {
-            list = model.students.stream().filter(student -> (equal(name, student.getFather().getFirstName())) &&
+            list = model.studentArrayList.stream().filter(student -> (equal(name, student.getFather().getFirstName())) &&
                     (equal(secondName, student.getFather().getSecondName())) && (equal(surname, student.getFather().getSurname()))).collect(Collectors.toList());
         }
         ArrayList<Student> filtered = new ArrayList<>(list);
@@ -70,9 +66,9 @@ public class StudentsController {
     public ArrayList<Student> searchByNumberOfSiblings(String type, String number) {
         List list;
         if (type == "brothers") {
-            list = model.students.stream().filter(student -> (student.getBrothers() == Integer.parseInt(number))).collect(Collectors.toList());
+            list = model.studentArrayList.stream().filter(student -> (student.getBrothers() == Integer.parseInt(number))).collect(Collectors.toList());
         } else {
-            list = model.students.stream().filter(student -> (student.getSisters() == Integer.parseInt(number))).collect(Collectors.toList());
+            list = model.studentArrayList.stream().filter(student -> (student.getSisters() == Integer.parseInt(number))).collect(Collectors.toList());
         }
         ArrayList<Student> filtered = new ArrayList<>(list);
         return filtered;
@@ -82,7 +78,7 @@ public class StudentsController {
         List list;
 //        сделать булеаном
         if (parent == "mother's income") {
-            list = model.students.stream().filter(student -> {
+            list = model.studentArrayList.stream().filter(student -> {
                 if (lowerBound.isEmpty()) {
                     return (student.getMother().getIncome() < Integer.parseInt(higherBound));
                 } else if (higherBound.isEmpty()) {
@@ -93,7 +89,7 @@ public class StudentsController {
                 }
             }).collect(Collectors.toList());
         } else {
-            list = model.students.stream().filter(student -> {
+            list = model.studentArrayList.stream().filter(student -> {
                 if (lowerBound.isEmpty()) {
                     return (student.getFather().getIncome() < Integer.parseInt(higherBound));
                 } else if (higherBound.isEmpty()) {
@@ -117,7 +113,6 @@ public class StudentsController {
         newStudent.setMother(mother);
         newStudent.setFather(father);
 
-        model.students.add(newStudent);
         model.studentArrayList.add(newStudent);
         paginator.refreshPages(model.studentArrayList);
 

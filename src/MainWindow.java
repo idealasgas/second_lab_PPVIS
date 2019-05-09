@@ -40,8 +40,7 @@ public class MainWindow extends Application {
 
 
         ArrayList<Student> studentArrayList = new SAXExample().getStudents();
-        ObservableList<Student> students = FXCollections.observableArrayList(studentArrayList);
-        model = new MainModel(studentArrayList, students);
+        model = new MainModel(studentArrayList);
         Paginator paginator = new Paginator(model.studentArrayList);
         StudentsController studentsController = new StudentsController(model, paginator);
 
