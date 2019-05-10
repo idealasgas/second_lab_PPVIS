@@ -12,10 +12,6 @@ public class Parent {
         this.surname = surname;
     }
 
-    public String getFullName() {
-        return this.surname + " " + this.firstName + " " + this.secondName;
-    }
-
     public int getIncome() {
         return income;
     }

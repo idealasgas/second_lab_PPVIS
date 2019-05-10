@@ -1,12 +1,10 @@
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -41,7 +39,7 @@ public class Paginator {
         if (studentArrayList.isEmpty()) {
             table = new TableView<>();
         } else {
-            table = new Table().getTable(getPage(0));
+            table = getTable(getPage(0));
         }
 
         Button next = new Button("next");
@@ -167,7 +165,7 @@ public class Paginator {
             for (int i = 0; i < studentArrayList.size(); i += recordsOnPage) {
                 pages.add(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage)));
             }
-            table = new Table().getTable(getPage(0));
+            table = getTable(getPage(0));
             container.getChildren().remove(0);
             container.getChildren().add(0, table);
         } else {
@@ -195,5 +193,29 @@ public class Paginator {
         GridPane.setHgrow(button, Priority.ALWAYS);
         GridPane.setVgrow(button, Priority.ALWAYS);
         GridPane.setMargin(button, new Insets(10));
+    }
+
+    private TableView getTable(ObservableList<Student> students) {
+        TableView<Student> table = new TableView<>();
+        table.setItems(students);
+        TableColumn<Student, String> studentsNameColumn = new TableColumn<>("Student's name");
+        TableColumn<Student, String> fathersNameColumn = new TableColumn<>("Father's name");
+        TableColumn<Student, String> fathersIncomeColumn = new TableColumn<>("Father's income");
+        TableColumn<Student, String> mothersNameColumn = new TableColumn<>("Mother's name");
+        TableColumn<Student, String> mothersIncomeColumn = new TableColumn<>("Mother's income");
+        TableColumn<Student, String> brothersColumn = new TableColumn<>("Brothers");
+        TableColumn<Student, String> sistersColumn = new TableColumn<>("Sisters");
+
+
+        studentsNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getFirstName() + " " + param.getValue().getSecondName() + " " + param.getValue().getSurname()));
+        fathersNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getFather().getFirstName() + " " + param.getValue().getFather().getSecondName() + " " + param.getValue().getFather().getSurname()));
+        fathersIncomeColumn.setCellValueFactory(param -> new SimpleStringProperty(Integer.toString(param.getValue().getFather().getIncome())));
+        mothersNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getMother().getFirstName() + " " + param.getValue().getMother().getSecondName() + " " + param.getValue().getMother().getSurname()));
+        mothersIncomeColumn.setCellValueFactory(param -> new SimpleStringProperty(Integer.toString(param.getValue().getMother().getIncome())));
+        brothersColumn.setCellValueFactory(param -> new SimpleStringProperty(Integer.toString(param.getValue().getBrothers())));
+        sistersColumn.setCellValueFactory(param -> new SimpleStringProperty(Integer.toString(param.getValue().getSisters())));
+
+        table.getColumns().setAll(studentsNameColumn, fathersNameColumn, fathersIncomeColumn, mothersNameColumn, mothersIncomeColumn, brothersColumn, sistersColumn);
+        return table;
     }
 }

@@ -15,10 +15,6 @@ public class Student {
         this.sisters = sisters;
     }
 
-    public String getFullName() {
-        return this.surname + " " + this.firstName + " " + this.secondName;
-    }
-
     public void setMother(Parent mother) {
         this.mother = mother;
     }

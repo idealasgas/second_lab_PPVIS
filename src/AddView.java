@@ -61,8 +61,7 @@ public class AddView {
         Label studentSistersLabel = new Label("Amount of sisters");
         Label studentBrothersLabel = new Label("Amount of brothers");
 
-        // переделать грид, шоб не так страшно было
-
+        grid.add(studentFirstNameLabel, 0, 0);
         grid.add(studentFirstNameLabel, 0, 0);
         grid.add(studentFirstName, 1, 0);
         grid.add(studentSecondNameLabel, 0, 1);
@@ -70,7 +69,6 @@ public class AddView {
         grid.add(studentSurnameLabel, 0, 2);
         grid.add(studentSurname, 1, 2);
 
-        // это не текст поля, а для циферок
         grid.add(studentBrothersLabel, 0, 3);
         grid.add(brothers, 1, 3);
 

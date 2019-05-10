@@ -109,7 +109,6 @@ public class DeleteView {
 
         deleteButton.setOnAction(event -> {
             if (radioButtons.getSelectedToggle() == null) {
-                // алерт
             } else {
                 RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
                 setStudents(controller.deleteByParentsName(selected.getText(), name.getText(), secondName.getText(), surname.getText()));
