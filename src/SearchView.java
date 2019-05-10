@@ -17,7 +17,6 @@ public class SearchView {
     private VBox box;
     private Dialog searchDialog;
     private StudentsController controller;
-//    private Paginator paginator;
 
     SearchView(StudentsController controller) {
         this.controller = controller;

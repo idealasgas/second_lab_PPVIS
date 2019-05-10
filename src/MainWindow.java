@@ -121,7 +121,7 @@ public class MainWindow extends Application {
     private void onUpload(File file, VBox vBox) {
         if (file != null) {
             try {
-                ArrayList<Student> studentArrayList = new SAXExample().getStudents(file);
+                List<Student> studentArrayList = new SAXExample().getStudents(file);
                 model = new MainModel(studentArrayList);
                 paginator = new Paginator(model.getStudentArrayList());
                 studentsController = new StudentsController(model, paginator);

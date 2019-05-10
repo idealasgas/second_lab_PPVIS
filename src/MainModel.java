@@ -1,13 +1,13 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class MainModel {
-    private ArrayList<Student> studentArrayList;
+    private List<Student> studentArrayList;
 
-    MainModel(ArrayList<Student> studentArrayList) {
+    MainModel(List<Student> studentArrayList) {
         this.studentArrayList = studentArrayList;
     }
 
-    public ArrayList<Student> getStudentArrayList() {
+    public List<Student> getStudentArrayList() {
         return studentArrayList;
     }
 }

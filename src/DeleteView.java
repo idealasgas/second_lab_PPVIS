@@ -3,7 +3,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DeleteView {
@@ -14,7 +13,7 @@ public class DeleteView {
     private VBox box;
     private Dialog deleteDialog;
     private StudentsController controller;
-    private ArrayList<Student> students;
+    private List<Student> students;
 
     DeleteView(StudentsController controller) {
         this.controller = controller;
@@ -196,7 +195,7 @@ public class DeleteView {
         deleteByParentIncomeButton.setDisable(true);
     }
 
-    private void setStudents(ArrayList<Student> students) {
+    private void setStudents(List<Student> students) {
         this.students = students;
     }
 
@@ -208,7 +207,6 @@ public class DeleteView {
             alert.setContentText("Nothing found");
         } else {
             alert.setContentText(students.size() + " students have been deleted just now.");
-//            paginator.refreshPages();
         }
 
         alert.showAndWait();

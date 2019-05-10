@@ -13,23 +13,24 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Paginator {
-    private ArrayList<ArrayList<Student>> pages = new ArrayList<>();
+    private List<List<Student>> pages = new ArrayList<>();
     private TableView<Student> table;
     private int currentPage;
     private int recordsOnPage;
     private Label currentPageLabel;
     private Label totalRecordsLabel;
-    private ArrayList<Student> studentArrayList;
+    private List<Student> studentArrayList;
     private VBox container;
 
-    public Paginator(ArrayList<Student> arrayListOfStudents) {
+    public Paginator(List<Student> arrayListOfStudents) {
         if (arrayListOfStudents.isEmpty()) {
 
         } else {
             for (int i = 0; i < arrayListOfStudents.size(); i += 10) {
-                pages.add(new ArrayList<>(arrayListOfStudents.subList(i, Math.min(arrayListOfStudents.size(), i + 10))));
+                pages.add(arrayListOfStudents.subList(i, Math.min(arrayListOfStudents.size(), i + 10)));
             }
         }
         this.studentArrayList = arrayListOfStudents;
@@ -38,9 +39,9 @@ public class Paginator {
 
     public VBox getView() {
         if (studentArrayList.isEmpty()) {
-            table  = new TableView<>();
+            table = new TableView<>();
         } else {
-            table  = new Table().getTable(getPage(0));
+            table = new Table().getTable(getPage(0));
         }
 
         Button next = new Button("next");
@@ -72,7 +73,6 @@ public class Paginator {
         grid.add(recordsOnPage, 7, 0);
         grid.add(setRecordsOnPageButton, 8,  0);
         grid.add(totalRecordsLabel, 9, 0);
-//        grid.setGridLinesVisible(true);
 
         setButton(first);
         setButton(previous);
@@ -165,7 +165,7 @@ public class Paginator {
     public void refreshPages() {
         if (studentArrayList.size() == 1) {
             for (int i = 0; i < studentArrayList.size(); i += recordsOnPage) {
-                pages.add(new ArrayList<>(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage))));
+                pages.add(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage)));
             }
             table = new Table().getTable(getPage(0));
             container.getChildren().remove(0);
@@ -173,7 +173,7 @@ public class Paginator {
         } else {
             pages.clear();
             for (int i = 0; i < studentArrayList.size(); i += recordsOnPage) {
-                pages.add(new ArrayList<>(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage))));
+                pages.add(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage)));
             }
         }
 
@@ -183,7 +183,7 @@ public class Paginator {
         totalRecordsLabel.setText(Integer.toString(studentArrayList.size()));
     }
 
-    public void refreshPages(ArrayList<Student> studentArrayList) {
+    public void refreshPages(List<Student> studentArrayList) {
         this.studentArrayList = studentArrayList;
         recordsOnPage = 10;
         refreshPages();
