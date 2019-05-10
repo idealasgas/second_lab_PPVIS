@@ -92,6 +92,8 @@ public class MainWindow extends Application {
             }
         });
 
+        MenuItem newItem = new MenuItem("New");
+
         upload.setOnAction(event -> {
             File file = fileChooser.showOpenDialog(primaryStage);
             if (file != null) {
@@ -127,7 +129,19 @@ public class MainWindow extends Application {
             vBox.getChildren().add(paginator.getView());
         });
 
-        menuFile.getItems().addAll(uploadMenu, downloadMenu);
+        menuFile.getItems().addAll(newItem, uploadMenu, downloadMenu);
+
+        newItem.setOnAction(event -> {
+            ArrayList<Student> studentArrayList = new ArrayList<>();
+
+            model = new MainModel(studentArrayList);
+            paginator = new Paginator(model.getStudentArrayList());
+            studentsController = new StudentsController(model, paginator);
+            if (vBox.getChildren().size() == 3) {
+                vBox.getChildren().remove(2);
+            }
+            vBox.getChildren().add(paginator.getView());
+        });
 
         MenuItem addMenu = new MenuItem("Add student");
         addMenu.setOnAction(event -> onAddButton(studentsController));

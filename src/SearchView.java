@@ -137,6 +137,7 @@ public class SearchView {
                 ArrayList<Student> studentsForTable = controller.searchByNumberOfSiblings(selected.getText(), number.getText());
                 showResultsTable(studentsForTable);
                 searchDialog.setHeight(500);
+                searchDialog.setWidth(1200);
             }
         });
     }
@@ -176,6 +177,7 @@ public class SearchView {
         box.getChildren().add(grid);
         disableButtons();
         searchDialog.setHeight(500);
+        searchDialog.setWidth(1200);
     }
 
     private void showResultsTable(ArrayList<Student> studentArrayList) {
