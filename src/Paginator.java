@@ -19,18 +19,27 @@ public class Paginator {
     private int recordsOnPage;
     private Label currentPageLabel;
     private Label totalRecordsLabel;
-    private ArrayList<Student> studentArrayList;;
+    private ArrayList<Student> studentArrayList;
+    private VBox container;
 
     public Paginator(ArrayList<Student> arrayListOfStudents) {
-        this.studentArrayList = arrayListOfStudents;
-        for (int i = 0; i < arrayListOfStudents.size(); i += 10) {
-            pages.add(new ArrayList<>(arrayListOfStudents.subList(i, Math.min(arrayListOfStudents.size(), i + 10))));
+        if (arrayListOfStudents.isEmpty()) {
+
+        } else {
+            for (int i = 0; i < arrayListOfStudents.size(); i += 10) {
+                pages.add(new ArrayList<>(arrayListOfStudents.subList(i, Math.min(arrayListOfStudents.size(), i + 10))));
+            }
         }
+        this.studentArrayList = arrayListOfStudents;
         this.currentPage = 0;
     }
 
     public VBox getView() {
-        table  = new Table().getTable(getPage(0));
+        if (studentArrayList.isEmpty()) {
+            table  = new TableView<>();
+        } else {
+            table  = new Table().getTable(getPage(0));
+        }
 
         Button next = new Button("next");
         Button previous = new Button("previous");
@@ -127,7 +136,7 @@ public class Paginator {
             currentPageLabel.setText((pages.size()) + "/" + pages.size());
         });
 
-        VBox container = new VBox();
+        container = new VBox();
         container.getChildren().addAll(table, grid);
         return container;
     }
@@ -143,12 +152,22 @@ public class Paginator {
     }
 
     public void refreshPages() {
-        pages.clear();
-        for (int i = 0; i < studentArrayList.size(); i += recordsOnPage) {
-            pages.add(new ArrayList<>(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage))));
+        if (studentArrayList.size() == 1) {
+            for (int i = 0; i < studentArrayList.size(); i += recordsOnPage) {
+                pages.add(new ArrayList<>(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage))));
+            }
+            table = new Table().getTable(getPage(0));
+            container.getChildren().remove(0);
+            container.getChildren().add(0, table);
+        } else {
+            pages.clear();
+            for (int i = 0; i < studentArrayList.size(); i += recordsOnPage) {
+                pages.add(new ArrayList<>(studentArrayList.subList(i, Math.min(studentArrayList.size(), i + recordsOnPage))));
+            }
         }
+
         currentPage = 0;
-        table.setItems(FXCollections.observableArrayList(pages.get(0)));
+        table.setItems(getPage(0));
         currentPageLabel.setText("1/" + pages.size());
         totalRecordsLabel.setText(Integer.toString(studentArrayList.size()));
     }

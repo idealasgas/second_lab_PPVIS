@@ -41,6 +41,7 @@ public class MainWindow extends Application {
         Button search = new Button("Search");
         Button download = new Button("Download");
         Button upload = new Button("Upload");
+        Button newButton = new Button("New");
         final FileChooser fileChooser = new FileChooser();
 
 
@@ -53,7 +54,7 @@ public class MainWindow extends Application {
         });
 
         fileChooser.setInitialDirectory(new File("D:/Документы/универ/ППвИС/labs_1_sem/second_lab_ppvis"));
-        toolBar.getItems().addAll(add, remove, search, download, upload);
+        toolBar.getItems().addAll(add, remove, search, download, upload, newButton);
         VBox vBox = new VBox(toolBar);
 
         MenuBar menuBar = new MenuBar();
@@ -76,6 +77,9 @@ public class MainWindow extends Application {
                     model = new MainModel(studentArrayList);
                     paginator = new Paginator(model.getStudentArrayList());
                     studentsController = new StudentsController(model, paginator);
+                    if (vBox.getChildren().size() == 3) {
+                        vBox.getChildren().remove(2);
+                    }
                     vBox.getChildren().add(paginator.getView());
 
                 } catch (ParserConfigurationException e) {
@@ -96,6 +100,9 @@ public class MainWindow extends Application {
                     model = new MainModel(studentArrayList);
                     paginator = new Paginator(model.getStudentArrayList());
                     studentsController = new StudentsController(model, paginator);
+                    if (vBox.getChildren().size() == 3) {
+                        vBox.getChildren().remove(2);
+                    }
                     vBox.getChildren().add(paginator.getView());
 
                 } catch (ParserConfigurationException e) {
@@ -106,6 +113,18 @@ public class MainWindow extends Application {
                     e.printStackTrace();
                 }
             }
+        });
+
+        newButton.setOnAction(event -> {
+            ArrayList<Student> studentArrayList = new ArrayList<>();
+
+            model = new MainModel(studentArrayList);
+            paginator = new Paginator(model.getStudentArrayList());
+            studentsController = new StudentsController(model, paginator);
+            if (vBox.getChildren().size() == 3) {
+                vBox.getChildren().remove(2);
+            }
+            vBox.getChildren().add(paginator.getView());
         });
 
         menuFile.getItems().addAll(uploadMenu, downloadMenu);

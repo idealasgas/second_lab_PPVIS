@@ -97,6 +97,7 @@ public class SearchView {
             if (type.equals("student")) {
                 ArrayList<Student> studentsForTable = controller.searchByStudentName(firstName.getText(), secondName.getText(), surname.getText());
                 showResultsTable(studentsForTable);
+
             }
             if (type.equals("parent")) {
                 if (radioButtons.getSelectedToggle() == null) {
@@ -107,6 +108,8 @@ public class SearchView {
                     showResultsTable(studentsForTable);
                 }
             }
+            searchDialog.setHeight(500);
+            searchDialog.setWidth(1200);
         });
     }
 
@@ -133,7 +136,7 @@ public class SearchView {
                 RadioButton selected = (RadioButton) radioButtons.getSelectedToggle();
                 ArrayList<Student> studentsForTable = controller.searchByNumberOfSiblings(selected.getText(), number.getText());
                 showResultsTable(studentsForTable);
-                searchDialog.setHeight(300);
+                searchDialog.setHeight(500);
             }
         });
     }
