@@ -39,21 +39,21 @@ public class MainWindow extends Application {
         Button add = new Button("Add");
         Button remove = new Button("Remove");
         Button search = new Button("Search");
-
-
-//        ArrayList<Student> studentArrayList = new SAXExample().getStudents();
-//        model = new MainModel(studentArrayList);
-//        Paginator paginator = new Paginator(model.getStudentArrayList());
-//        StudentsController studentsController = new StudentsController(model, paginator);
+        Button download = new Button("Download");
+        Button upload = new Button("Upload");
+        final FileChooser fileChooser = new FileChooser();
 
 
         add.setOnAction(event -> onAddButton(studentsController));
         search.setOnAction(event -> onSearchButton(studentsController));
         remove.setOnAction(event -> onDeleteButton(studentsController));
-        final FileChooser fileChooser = new FileChooser();
-        fileChooser.setInitialDirectory(new File("D:/Документы/универ/ППвИС/labs_1_sem/second_lab_ppvis"));
+        download.setOnAction(event -> {
+            File file = fileChooser.showOpenDialog(primaryStage);
+            new DOMExample().createNewFile(file, model.getStudentArrayList());
+        });
 
-        toolBar.getItems().addAll(add, remove, search);
+        fileChooser.setInitialDirectory(new File("D:/Документы/универ/ППвИС/labs_1_sem/second_lab_ppvis"));
+        toolBar.getItems().addAll(add, remove, search, download, upload);
         VBox vBox = new VBox(toolBar);
 
         MenuBar menuBar = new MenuBar();
@@ -86,7 +86,26 @@ public class MainWindow extends Application {
                     e.printStackTrace();
                 }
             }
+        });
 
+        upload.setOnAction(event -> {
+            File file = fileChooser.showOpenDialog(primaryStage);
+            if (file != null) {
+                try {
+                    ArrayList<Student> studentArrayList = new SAXExample().getStudents(file);
+                    model = new MainModel(studentArrayList);
+                    paginator = new Paginator(model.getStudentArrayList());
+                    studentsController = new StudentsController(model, paginator);
+                    vBox.getChildren().add(paginator.getView());
+
+                } catch (ParserConfigurationException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (SAXException e) {
+                    e.printStackTrace();
+                }
+            }
         });
 
         menuFile.getItems().addAll(uploadMenu, downloadMenu);
