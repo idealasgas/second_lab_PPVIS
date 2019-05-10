@@ -4,6 +4,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DeleteView {
     private Button deleteByStudentNameButton;

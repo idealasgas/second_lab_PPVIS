@@ -77,7 +77,7 @@ public class StudentsController {
     public ArrayList<Student> searchByParentsIncome(String parent, String lowerBound, String higherBound) {
         List list;
 //        сделать булеаном
-        if (parent == "mother's income") {
+        if ("mother's income".equals(parent)) {
             list = model.getStudentArrayList().stream().filter(student -> {
                 if (lowerBound.isEmpty()) {
                     return (student.getMother().getIncome() < Integer.parseInt(higherBound));

@@ -71,77 +71,21 @@ public class MainWindow extends Application {
         MenuItem uploadMenu = new MenuItem("Open");
         uploadMenu.setOnAction(event -> {
             File file = fileChooser.showOpenDialog(primaryStage);
-            if (file != null) {
-                try {
-                    ArrayList<Student> studentArrayList = new SAXExample().getStudents(file);
-                    model = new MainModel(studentArrayList);
-                    paginator = new Paginator(model.getStudentArrayList());
-                    studentsController = new StudentsController(model, paginator);
-                    if (vBox.getChildren().size() == 3) {
-                        vBox.getChildren().remove(2);
-                    }
-                    vBox.getChildren().add(paginator.getView());
-
-                } catch (ParserConfigurationException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (SAXException e) {
-                    e.printStackTrace();
-                }
-            }
+            onUpload(file, vBox);
         });
 
         MenuItem newItem = new MenuItem("New");
 
         upload.setOnAction(event -> {
             File file = fileChooser.showOpenDialog(primaryStage);
-            if (file != null) {
-                try {
-                    ArrayList<Student> studentArrayList = new SAXExample().getStudents(file);
-                    model = new MainModel(studentArrayList);
-                    paginator = new Paginator(model.getStudentArrayList());
-                    studentsController = new StudentsController(model, paginator);
-                    if (vBox.getChildren().size() == 3) {
-                        vBox.getChildren().remove(2);
-                    }
-                    vBox.getChildren().add(paginator.getView());
-
-                } catch (ParserConfigurationException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (SAXException e) {
-                    e.printStackTrace();
-                }
-            }
+            onUpload(file, vBox);
         });
 
-        newButton.setOnAction(event -> {
-            ArrayList<Student> studentArrayList = new ArrayList<>();
-
-            model = new MainModel(studentArrayList);
-            paginator = new Paginator(model.getStudentArrayList());
-            studentsController = new StudentsController(model, paginator);
-            if (vBox.getChildren().size() == 3) {
-                vBox.getChildren().remove(2);
-            }
-            vBox.getChildren().add(paginator.getView());
-        });
+        newButton.setOnAction(event -> onNewButton(vBox));
 
         menuFile.getItems().addAll(newItem, uploadMenu, downloadMenu);
 
-        newItem.setOnAction(event -> {
-            ArrayList<Student> studentArrayList = new ArrayList<>();
-
-            model = new MainModel(studentArrayList);
-            paginator = new Paginator(model.getStudentArrayList());
-            studentsController = new StudentsController(model, paginator);
-            if (vBox.getChildren().size() == 3) {
-                vBox.getChildren().remove(2);
-            }
-            vBox.getChildren().add(paginator.getView());
-        });
+        newItem.setOnAction(event -> onNewButton(vBox));
 
         MenuItem addMenu = new MenuItem("Add student");
         addMenu.setOnAction(event -> onAddButton(studentsController));
@@ -174,7 +118,37 @@ public class MainWindow extends Application {
         new DeleteView(controller).getDialog().showAndWait();
     }
 
-    private void onUpload() {
+    private void onUpload(File file, VBox vBox) {
+        if (file != null) {
+            try {
+                ArrayList<Student> studentArrayList = new SAXExample().getStudents(file);
+                model = new MainModel(studentArrayList);
+                paginator = new Paginator(model.getStudentArrayList());
+                studentsController = new StudentsController(model, paginator);
+                if (vBox.getChildren().size() == 3) {
+                    vBox.getChildren().remove(2);
+                }
+                vBox.getChildren().add(paginator.getView());
 
+            } catch (ParserConfigurationException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (SAXException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void onNewButton(VBox vBox) {
+        ArrayList<Student> studentArrayList = new ArrayList<>();
+
+        model = new MainModel(studentArrayList);
+        paginator = new Paginator(model.getStudentArrayList());
+        studentsController = new StudentsController(model, paginator);
+        if (vBox.getChildren().size() == 3) {
+            vBox.getChildren().remove(2);
+        }
+        vBox.getChildren().add(paginator.getView());
     }
 }
