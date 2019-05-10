@@ -1,3 +1,5 @@
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -36,6 +38,11 @@ public class AddView {
         TextField mothersSecondName = new TextField();
         TextField mothersSurname = new TextField();
         TextField mothersIncome = new TextField();
+
+        setNumericInput(sisters);
+        setNumericInput(brothers);
+        setNumericInput(mothersIncome);
+        setNumericInput(fathersIncome);
 
         Label motherFirstNameLabel = new Label("Mother's first name");
         Label motherSecondNameLabel = new Label("Mother's second name");
@@ -92,10 +99,9 @@ public class AddView {
 
         addDialog.setResultConverter(dialogButton -> {
             if (dialogButton == addButtonType) {
-//                System.out.println("works");
-                // добавить валидацию, если поля пустые
                 controller.addStudent(studentFirstName.getText(), studentSecondName.getText(), studentSurname.getText(),
-                        sisters.getText(), brothers.getText(), fathersIncome.getText(), mothersIncome.getText(),
+                        sisters.getText(), brothers.getText(),
+                        fathersIncome.getText(), mothersIncome.getText(),
                         fathersFirstName.getText(), mothersFirstName.getText(), fathersSecondName.getText(),
                         mothersSecondName.getText(), fathersSurname.getText(), mothersSurname.getText());
             }
@@ -103,5 +109,17 @@ public class AddView {
         });
 
         return addDialog;
+    }
+
+    private void setNumericInput(TextField textField) {
+        textField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    textField.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
     }
 }

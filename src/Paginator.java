@@ -1,3 +1,5 @@
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -50,6 +52,15 @@ public class Paginator {
         TextField recordsOnPage = new TextField();
         Button setRecordsOnPageButton = new Button("set");
         Label recordsOnPageLabel = new Label("records on page:");
+        recordsOnPage.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    recordsOnPage.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
 
         GridPane grid = new GridPane();
         grid.add(first, 0, 0);

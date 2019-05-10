@@ -115,13 +115,6 @@ public class StudentsController {
 
         model.getStudentArrayList().add(newStudent);
         paginator.refreshPages(model.getStudentArrayList());
-
-//        DOMExample dom = new DOMExample();
-//        dom.addRecord(name, secondName, surname, mothersName, mothersSecondName, mothersSurname,
-//                fathersName, fathersSecondName, fathersSurname,
-//                Integer.parseInt(fathersIncome), Integer.parseInt(mothersIncome),
-//                Integer.parseInt(brothers), Integer.parseInt(sisters)
-//        );
     }
 
     private boolean equal(String input, String value) {

@@ -32,7 +32,7 @@ public class MainWindow extends Application {
     private Paginator paginator;
 
 
-    public void start(Stage primaryStage) throws ParserConfigurationException, SAXException, IOException {
+    public void start(Stage primaryStage) {
         primaryStage.setTitle("лабораторная 2");
 
         ToolBar toolBar = new ToolBar();
@@ -172,5 +172,9 @@ public class MainWindow extends Application {
 
     private void onDeleteButton(StudentsController controller) {
         new DeleteView(controller).getDialog().showAndWait();
+    }
+
+    private void onUpload() {
+
     }
 }

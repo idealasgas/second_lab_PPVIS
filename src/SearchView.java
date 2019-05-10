@@ -1,3 +1,5 @@
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -40,7 +42,6 @@ public class SearchView {
         buttons.getChildren().addAll(searchByStudentNameButton, searchByParentNameButton, searchByNumberOfSiblingsButton, searchByParentIncomeButton);
         box.getChildren().add(buttons);
 
-        // добавить флаг, который будет передаваться в контроллер чтобы понимать по чему искать
         searchByStudentNameButton.setOnAction(event -> searchByName("student"));
         searchByParentNameButton.setOnAction(event -> searchByName("parent"));
         searchByNumberOfSiblingsButton.setOnAction(event -> searchByNumberOfSiblings());
@@ -122,6 +123,7 @@ public class SearchView {
         radioButtons.getToggles().addAll(sisters, brothers);
 
         TextField number = new TextField();
+        setNumericInput(number);
         HBox container = new HBox();
         container.setSpacing(10);
         container.getChildren().addAll(sisters, brothers, number, searchButton);
@@ -151,7 +153,9 @@ public class SearchView {
         Label lowerBoundLabel = new Label("lower bound:");
         Label higherBoundLabel = new Label("higher bound:");
         TextField lowerBound = new TextField();
+        setNumericInput(lowerBound);
         TextField higherBound = new TextField();
+        setNumericInput(higherBound);
 
         GridPane grid = new GridPane();
         grid.add(mother, 0, 0);
@@ -188,5 +192,17 @@ public class SearchView {
             Paginator paginator = new Paginator(studentArrayList);
             box.getChildren().add(paginator.getView());
         }
+    }
+
+    private void setNumericInput(TextField textField) {
+        textField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    textField.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
     }
 }
