@@ -161,8 +161,4 @@ public class DOMExample {
             te.printStackTrace();
         }
     }
-
-    private void writeStudent(Document doc, Student student) {
-
-    }
 }

@@ -51,6 +51,7 @@ public class MainWindow extends Application {
         search.setOnAction(event -> onSearchButton(studentsController));
         remove.setOnAction(event -> onDeleteButton(studentsController));
         final FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(new File("D:/Документы/универ/ППвИС/labs_1_sem/second_lab_ppvis"));
 
         toolBar.getItems().addAll(add, remove, search);
         VBox vBox = new VBox(toolBar);
